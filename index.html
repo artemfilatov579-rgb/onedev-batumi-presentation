@@ -10,61 +10,85 @@
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Inter:wght@400;450;500;550;600;650;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:wght@300;400;450;500;550;600;650&display=swap" rel="stylesheet">
 <style>
 /* ============================================================
    TOKENS — дизайн-система realmajor.life
    Бордовая палитра: отсылка к цвету грузинского вина (саперави)
    ============================================================ */
 :root{
-  /* вино */
-  --wine-400:#E0568A;
-  --wine-500:#C9315F;
-  --wine-600:#A81E48;
-  --wine-700:#7D1435;
-  --wine-800:#5A0E26;
-  --wine-tint:rgba(224,86,138,.12);
+  /* ---- БОРДО (Old Money): приглушённый оксблад вместо яркого розового ---- */
+  --wine-400:#A8556A;   /* акценты на тёмном — благородный, не кричит */
+  --wine-500:#8C3247;
+  --wine-600:#6B1F2E;   /* кнопки, активные состояния */
+  --wine-700:#54172A;
+  --wine-800:#3D1119;   /* глубокие заливки */
+  --wine-tint:rgba(168,85,106,.11);
+  --wine-ink:#4A1420;   /* бордо для текста на светлом */
 
-  /* чернила и поверхности */
-  --ink-950:#0A0710;
-  --ink-900:#120B18;
-  --ink-850:#171021;
-  --surface:#1C1426;
-  --surface-2:#241A31;
-  --surface-3:#2E2140;
+  /* ---- ЛАТУНЬ: тонкие линии и вензеля, никакого блеска ---- */
+  --brass-300:#D6BE8E;
+  --brass-400:#C4A96D;
+  --brass-500:#B8975A;
+  --brass-600:#96773F;
+  --brass-700:#6E5729;  /* для текста на светлом */
+  --brass-tint:rgba(184,151,90,.13);
+  --brass-line:rgba(184,151,90,.30);
 
-  /* туман — текстовая шкала */
-  --fog-100:#F2EDF5;
-  --fog-300:#CFC4D8;
-  --fog-500:#9C8FA8;
-  --fog-600:#7D7088;
+  /* ---- ЗЕЛЁНЫЙ БИЛЬЯРДНОГО СУКНА: второй акцент ---- */
+  --forest-400:#5C8570;
+  --forest-600:#2F4A3B;
+  --forest-800:#1B2E24;
+  --forest-ink:#223A2D;
 
-  /* линии */
-  --line-1:rgba(242,237,245,.08);
-  --line-2:rgba(242,237,245,.14);
-  --line-3:rgba(242,237,245,.22);
+  /* ---- УГОЛЬ с тёплым, не фиолетовым подтоном ---- */
+  --ink-950:#0F0D0B;
+  --ink-900:#171310;
+  --ink-850:#1E1916;
+  --surface:#241E1A;
+  --surface-2:#2C2521;
+  --surface-3:#372E28;
 
-  /* яркие акценты — закат Батуми и Чёрное море */
-  --sun-400:#FFB454;
-  --sun-500:#F59120;
-  --sun-tint:rgba(255,180,84,.14);
-  --sea-400:#3FC5D9;
-  --sea-500:#1BA3BC;
-  --sea-tint:rgba(63,197,217,.13);
-  --sea-700:#0B6E82;      /* для текста на светлом фоне */
-  --sun-700:#A85F00;      /* для текста на светлом фоне */
-  --cream:#FFF7EE;
-  --sand-100:#F6EEE4;
-  --sand-200:#EADFCF;
+  /* ---- ПЕРГАМЕНТ: светлые секции ---- */
+  --cream:#F7F3EA;
+  --sand-100:#F0EADC;
+  --sand-200:#E4DACA;
+  --sand-300:#D3C6B0;
 
-  /* статусы */
-  --ok:#4FB286;
-  --ok-tint:rgba(79,178,134,.14);
-  --warn:#D9A54C;
-  --warn-tint:rgba(217,165,76,.14);
-  --info:#6B8BC4;
+  /* ---- Текстовая шкала на тёмном ---- */
+  --fog-100:#F3EEE4;
+  --fog-300:#D8CFC0;
+  --fog-500:#A2988A;
+  --fog-600:#7E7568;
 
-  /* --- совместимость: старые имена указывают на новую палитру --- */
+  /* ---- Текст на светлом ---- */
+  --deep-ink:#1A1512;
+  --body-ink:#544A40;
+
+  /* ---- линии ---- */
+  --line-1:rgba(243,238,228,.07);
+  --line-2:rgba(243,238,228,.13);
+  --line-3:rgba(243,238,228,.22);
+  --line-warm:rgba(90,72,45,.14);
+
+  /* ---- статусы, приглушённые под общий тон ---- */
+  --ok:#5C8570;
+  --ok-tint:rgba(92,133,112,.14);
+  --warn:#B8975A;
+  --warn-tint:rgba(184,151,90,.14);
+  --info:#6E8299;
+
+  /* ---- море и закат: приглушены до пыльных ---- */
+  --sun-400:#D9AE72;
+  --sun-500:#B8873F;
+  --sun-700:#7A5520;
+  --sun-tint:rgba(217,174,114,.13);
+  --sea-400:#7FA8A8;
+  --sea-500:#4E7B7C;
+  --sea-700:#2E5254;
+  --sea-tint:rgba(127,168,168,.12);
+
+  /* --- совместимость со старыми именами --- */
   --ink:var(--ink-900);
   --ink-2:var(--ink-850);
   --deep:var(--ink-950);
@@ -76,27 +100,27 @@
   --txt-2:var(--fog-500);
   --txt-light:var(--fog-100);
   --txt-light-2:var(--fog-300);
-  --gold:var(--wine-400);
-  --gold-2:var(--wine-400);
-  --gold-soft:var(--wine-tint);
+  --gold:var(--brass-400);
+  --gold-2:var(--brass-300);
+  --gold-soft:var(--brass-tint);
   --pos:var(--ok);
   --neg:var(--wine-500);
 
-  /* типографика */
+  /* ---- типографика Old Money ---- */
   --sans:'Inter',system-ui,-apple-system,BlinkMacSystemFont,sans-serif;
-  --serif:'Bricolage Grotesque','Inter Tight',system-ui,sans-serif;
-  --mono:'JetBrains Mono','IBM Plex Mono',ui-monospace,monospace;
-  --ls-display:-.035em;
-  --lh-display:.94;
-  --ls-mono:.09em;
+  --serif:'Cormorant Garamond','Times New Roman',Georgia,serif;
+  --mono:'Inter',system-ui,sans-serif;   /* капитель вместо техно-моно */
+  --ls-display:-.012em;                   /* антиква не любит тесноту */
+  --lh-display:1.04;
+  --ls-mono:.20em;                        /* широкая разрядка лейблов */
 
-  /* геометрия и движение */
-  --r-card:20px;
-  --r-ctl:12px;
-  --r-chip:10px;
+  /* ---- геометрия: почти прямые углы, как у гравюры ---- */
+  --r-card:3px;
+  --r-ctl:2px;
+  --r-chip:2px;
   --r-pill:9999px;
-  --dur:380ms;
-  --ease:cubic-bezier(.16,1,.3,1);
+  --dur:520ms;
+  --ease:cubic-bezier(.22,1,.36,1);
   --maxw:1280px;
 }
 
@@ -111,18 +135,30 @@ body{
   -webkit-font-smoothing:antialiased;
   overflow-x:hidden;
 }
-/* дисплейные заголовки — Bricolage Grotesque, плотно и с отрицательным трекингом */
-h1,h2,h3,.sec-title,.cta-title{
+/* Заголовки — Cormorant Garamond: высококонтрастная антиква, регистр люкса */
+h1,h2,h3,.sec-title,.cta-title,.shot-title{
   font-family:var(--serif);
   letter-spacing:var(--ls-display);
-  font-weight:600;
+  font-weight:400;             /* лёгкое начертание в крупном кегле = дороже */
+  line-height:var(--lh-display);
 }
-/* моно-лейблы в стиле сайта */
+/* Лейблы — разреженный капитель вместо техничного моно */
 .sec-kicker,.cx-label,.cxh-lab,.cxk-lab,.cxb-title,.cxr-title,.hstat-lab,
 .ct-head,.cc-title,.pn-t,.db-t,.mk-badge,.cbtn-l,.hero-foot,.eyebrow,
-.proj-flag,.proj-flag-print,.step-n,.proj-date span,.cxp-title{
+.proj-flag,.proj-flag-print,.step-n,.proj-date span,.cxp-title,
+.shot-kicker,.shot-stat-t,.shot-credit,.band figcaption,.shot-gal figcaption,
+.fl-l,.topnav a,.why-photo-cap{
   font-family:var(--mono);
   letter-spacing:var(--ls-mono);
+  font-weight:500;
+  text-transform:uppercase;
+}
+/* Крупные числа — антиква со старостильными пропорциями */
+.hstat-num,.cs-num,.cf-big,.cxh-num,.cxk-num,.mk-n,.tax-n,.ht-n,.db-n,
+.pn-n,.ct-v,.ct-g,.cxr-v,.shot-stat-n,.ccb-num{
+  font-family:var(--serif);
+  font-weight:500;
+  letter-spacing:0;
 }
 img{max-width:100%;display:block}
 a{color:inherit}
@@ -139,21 +175,26 @@ a{color:inherit}
 .sec{padding:clamp(64px,9vw,120px) 0;position:relative}
 .sec-dark{
   background:
-    radial-gradient(100% 70% at 82% 0%, rgba(63,197,217,.10) 0%, rgba(63,197,217,0) 55%),
-    radial-gradient(90% 80% at 5% 100%, rgba(168,30,72,.18) 0%, rgba(168,30,72,0) 58%),
+    radial-gradient(100% 70% at 82% 0%, rgba(184,151,90,.07) 0%, rgba(184,151,90,0) 55%),
+    radial-gradient(90% 80% at 5% 100%, rgba(107,31,46,.20) 0%, rgba(107,31,46,0) 58%),
     var(--ink-950);
   color:var(--fog-100);
 }
 .sec-head{max-width:760px;margin-bottom:clamp(40px,6vw,68px)}
 .sec-kicker{
-  font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
-  color:var(--gold);margin-bottom:18px;
+  font-size:10px;font-weight:500;letter-spacing:var(--ls-mono);text-transform:uppercase;
+  color:var(--brass-400);margin-bottom:22px;
+  display:flex;align-items:center;gap:12px;
+}
+/* тонкая латунная линия после кикера — приём гравюрной верстки */
+.sec-kicker::after{
+  content:'';flex:1;max-width:80px;height:1px;background:var(--brass-line);
 }
 .sec-dark .sec-kicker,.sec-head-light .sec-kicker{color:var(--gold-2)}
 .sec-title{
   font-family:var(--serif);
-  font-size:clamp(1.9rem,4.2vw,3.4rem);
-  line-height:1.04;font-weight:600;letter-spacing:var(--ls-display);
+  font-size:clamp(2.1rem,4.6vw,3.7rem);
+  line-height:1.05;font-weight:400;letter-spacing:var(--ls-display);
   margin-bottom:20px;
 }
 .sec-lede{font-size:clamp(16px,1.6vw,18.5px);color:var(--txt-2);line-height:1.68;max-width:66ch}
@@ -164,17 +205,17 @@ a{color:inherit}
 .rmlogo{display:inline-flex;align-items:center;gap:10px;text-decoration:none;transition:var(--dur) var(--ease)}
 .rmlogo:hover{opacity:.82}
 .rmlogo-mark{
-  width:22px;height:22px;border:1.6px solid var(--wine-400);border-radius:5px;
+  width:22px;height:22px;border:1.4px solid var(--brass-500);border-radius:2px;
   display:inline-flex;gap:2px;padding:3.4px;flex-shrink:0;
 }
-.rmlogo-mark i{flex:1;background:var(--wine-400);border-radius:1px;display:block}
+.rmlogo-mark i{flex:1;background:var(--brass-500);border-radius:0;display:block}
 .rmlogo-mark i:last-child{opacity:.45}
 .rmlogo-txt{
-  font-family:var(--mono);font-size:14.5px;font-weight:500;
-  letter-spacing:.01em;display:inline-flex;gap:.42em;align-items:baseline;
+  font-family:var(--mono);font-size:13px;font-weight:500;
+  letter-spacing:.06em;display:inline-flex;gap:.42em;align-items:baseline;
 }
 .rmlogo-txt b{color:var(--fog-100);font-weight:500}
-.rmlogo-txt em{color:var(--wine-400);font-style:normal;font-weight:500}
+.rmlogo-txt em{color:var(--brass-400);font-style:normal;font-weight:500}
 .rmlogo-txt s{color:var(--fog-600);text-decoration:none}
 
 .topnav{display:flex;align-items:center;gap:clamp(14px,2.2vw,26px);flex-wrap:wrap}
@@ -184,8 +225,8 @@ a{color:inherit}
   color:var(--fog-500);text-decoration:none;transition:var(--dur) var(--ease);
 }
 .topnav a:hover{color:var(--fog-100)}
-.topnav-site{color:var(--wine-400) !important}
-.topnav-site:hover{color:var(--wine-500) !important}
+.topnav-site{color:var(--brass-400) !important}
+.topnav-site:hover{color:var(--brass-300) !important}
 @media(max-width:640px){
   .topnav a:not(.topnav-site){display:none}
 }
@@ -199,8 +240,8 @@ a{color:inherit}
 .hero-scrim{
   position:absolute;inset:0;
   background:
-    linear-gradient(180deg,rgba(10,7,16,.86) 0%,rgba(18,11,24,.52) 30%,rgba(18,11,24,.74) 64%,rgba(10,7,16,.97) 100%),
-    linear-gradient(90deg,rgba(10,7,16,.8) 0%,rgba(90,14,38,.18) 62%,rgba(10,7,16,.1) 100%);
+    linear-gradient(180deg,rgba(15,13,11,.88) 0%,rgba(23,19,16,.50) 30%,rgba(23,19,16,.76) 64%,rgba(15,13,11,.97) 100%),
+    linear-gradient(90deg,rgba(15,13,11,.82) 0%,rgba(61,17,25,.22) 60%,rgba(15,13,11,.08) 100%);
 }
 .hero-inner{
   position:relative;z-index:2;width:100%;max-width:var(--maxw);margin:0 auto;
@@ -217,17 +258,17 @@ a{color:inherit}
 .hero-body{max-width:880px;padding:clamp(20px,4vw,0) 0}
 .eyebrow{
   display:inline-block;font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
-  color:var(--wine-400);border:1px solid rgba(224,86,138,.4);
-  padding:8px 16px;border-radius:var(--r-pill);margin-bottom:26px;
-  background:var(--wine-tint);
+  color:var(--brass-300);border:1px solid var(--brass-line);
+  padding:9px 18px;border-radius:var(--r-ctl);margin-bottom:28px;
+  background:transparent;font-weight:500;
 }
 .hero h1{
   font-family:var(--serif);
-  font-size:clamp(2.8rem,7vw,6rem);
-  line-height:var(--lh-display);font-weight:800;letter-spacing:var(--ls-display);
+  font-size:clamp(3rem,7.6vw,6.6rem);
+  line-height:.98;font-weight:300;letter-spacing:var(--ls-display);
   margin-bottom:26px;text-wrap:balance;
 }
-.hero h1 em{font-style:normal;font-weight:800;color:var(--wine-400)}
+.hero h1 em{font-style:italic;font-weight:400;color:var(--brass-300)}
 .hero-lede{
   font-size:clamp(15.5px,1.85vw,20px);line-height:1.66;
   color:var(--fog-300);max-width:62ch;margin-bottom:38px;
@@ -253,10 +294,17 @@ a{color:inherit}
 .hero-cta{display:flex;flex-wrap:wrap;align-items:center;gap:20px}
 .btn{
   display:inline-block;font-weight:600;font-size:15px;letter-spacing:.01em;
-  padding:17px 34px;border-radius:var(--r-pill);text-decoration:none;transition:var(--dur) var(--ease);
+  padding:18px 40px;border-radius:var(--r-ctl);text-decoration:none;
+  transition:var(--dur) var(--ease);
+  font-family:var(--mono);font-size:11.5px;font-weight:550;
+  letter-spacing:.14em;text-transform:uppercase;
 }
-.btn-primary{background:var(--wine-600);color:var(--fog-100);box-shadow:0 8px 30px rgba(168,30,72,.36)}
-.btn-primary:hover{background:var(--wine-500);transform:translateY(-2px)}
+.btn-primary{
+  background:var(--wine-600);color:var(--cream);
+  border:1px solid var(--brass-line);
+  box-shadow:0 10px 34px -14px rgba(61,17,25,.75);
+}
+.btn-primary:hover{background:var(--wine-500);border-color:var(--brass-400)}
 .hero-cta-note{font-size:13px;color:var(--fog-500)}
 
 .hero-foot{
@@ -269,44 +317,47 @@ a{color:inherit}
 /* ============ OFFER STEPS ============ */
 /* «Три шага» — светлая песочная секция, разрывает череду тёмных */
 .sec-offer{
-  background:
-    radial-gradient(120% 90% at 12% -10%, #FFFDF9 0%, var(--sand-100) 46%, var(--sand-200) 100%);
-  color:#241A31;
+  background:linear-gradient(168deg,var(--cream) 0%,var(--sand-100) 60%,var(--sand-200) 100%);
+  color:var(--deep-ink);
+  border-top:1px solid var(--brass-line);
+  border-bottom:1px solid var(--brass-line);
 }
-.sec-offer .sec-title{color:#1C1426}
-.sec-offer .sec-kicker{color:var(--wine-600)}
-.sec-offer .sec-lede{color:#5B4E66}
+.sec-offer .sec-title{color:var(--deep-ink)}
+.sec-offer .sec-kicker{color:var(--brass-700)}
+.sec-offer .sec-kicker::after{background:rgba(110,87,41,.32)}
+.sec-offer .sec-lede{color:var(--body-ink)}
+/* лёгкая фактура бумаги вместо точечной сетки */
 .sec-offer::before{
-  content:'';position:absolute;inset:0;pointer-events:none;
-  background-image:radial-gradient(rgba(90,14,38,.055) 1px, transparent 1px);
-  background-size:22px 22px;
+  content:'';position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:
+    repeating-linear-gradient(0deg,rgba(110,87,41,.035) 0 1px,transparent 1px 3px),
+    repeating-linear-gradient(90deg,rgba(110,87,41,.025) 0 1px,transparent 1px 4px);
 }
 .sec-offer .wrap{position:relative;z-index:1}
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,2.6vw,32px)}
 .step{
-  background:#fff;border:1px solid rgba(90,14,38,.1);border-radius:var(--r-card);
+  background:#fff;border:1px solid rgba(90,72,45,.1);border-radius:var(--r-card);
   padding:clamp(26px,3vw,38px);position:relative;overflow:hidden;
-  box-shadow:0 2px 4px rgba(90,14,38,.05),0 14px 40px -18px rgba(90,14,38,.22);
+  box-shadow:0 2px 4px rgba(90,72,45,.05),0 14px 40px -18px rgba(90,72,45,.22);
   transition:var(--dur) var(--ease);
 }
-.step:hover{transform:translateY(-3px);box-shadow:0 4px 8px rgba(90,14,38,.07),0 26px 60px -22px rgba(90,14,38,.3)}
+.step:hover{transform:translateY(-3px);box-shadow:0 4px 8px rgba(90,72,45,.07),0 26px 60px -22px rgba(90,72,45,.3)}
 .step::after{
-  content:'';position:absolute;top:0;left:0;right:0;height:3px;
-  background:linear-gradient(90deg,var(--wine-600),var(--sun-500));
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,var(--brass-500),rgba(184,151,90,.15));
 }
-.step h3{color:#1C1426}
-.step p{color:#5B4E66}
+.step h3{color:var(--deep-ink)}
+.step p{color:var(--body-ink)}
 .step-n{
-  font-family:var(--mono);font-size:11px;font-weight:500;color:var(--wine-600);
-  letter-spacing:var(--ls-mono);margin-bottom:20px;
-  display:inline-block;padding:5px 10px;border-radius:var(--r-chip);
-  background:rgba(168,30,72,.08);
+  font-family:var(--serif);font-size:30px;font-weight:400;color:var(--brass-700);
+  letter-spacing:0;margin-bottom:16px;display:block;line-height:1;
 }
 .step h3{font-family:var(--serif);font-size:clamp(19px,2vw,23px);font-weight:600;margin-bottom:13px;line-height:1.25}
 .step p{font-size:14.8px;color:var(--txt-2);line-height:1.65;margin-bottom:20px}
 .step-tag{
   display:inline-block;font-size:11.5px;font-weight:650;letter-spacing:.05em;
-  color:var(--wine-700);background:rgba(168,30,72,.09);
+  color:var(--wine-ink);background:transparent;
+  border:1px solid rgba(74,20,32,.24);
   padding:7px 13px;border-radius:var(--r-chip);
 }
 
@@ -334,7 +385,7 @@ a{color:inherit}
 .cf-neg{color:var(--fog-300);font-size:clamp(15px,1.8vw,19px)}
 .cf-minus .cf-lab{color:var(--fog-500);font-weight:450}
 .cf-total{
-  background:linear-gradient(100deg,rgba(168,30,72,.30),rgba(90,14,38,.10));
+  background:linear-gradient(100deg,rgba(107,31,46,.30),rgba(90,72,45,.10));
   border-top:1px solid rgba(224,86,138,.38);
 }
 .cf-total .cf-lab{font-size:15.5px;font-weight:650;color:var(--fog-100)}
@@ -346,7 +397,7 @@ a{color:inherit}
   border-radius:var(--r-card);padding:clamp(20px,2.4vw,28px);
 }
 .cs-hero{
-  background:linear-gradient(155deg,rgba(168,30,72,.34),rgba(90,14,38,.10));
+  background:linear-gradient(155deg,rgba(107,31,46,.34),rgba(90,72,45,.10));
   border-color:rgba(224,86,138,.38);
 }
 .cs-num{
@@ -374,7 +425,7 @@ a{color:inherit}
 /* «Калькулятор» — средний тон с морской подсветкой */
 .sec-calcx{
   background:
-    radial-gradient(80% 100% at 100% 0%, rgba(63,197,217,.12) 0%, rgba(63,197,217,0) 55%),
+    radial-gradient(80% 100% at 100% 0%, rgba(184,151,90,.08) 0%, rgba(184,151,90,0) 55%),
     linear-gradient(175deg,var(--surface) 0%,var(--ink-850) 60%,var(--ink-900) 100%);
 }
 .sec-calcx .sec-kicker{color:var(--sea-400)}
@@ -468,7 +519,7 @@ a{color:inherit}
   background:var(--surface-2);border:1px solid var(--line-dark);
   border-radius:var(--r-card);padding:clamp(16px,2vw,22px);
 }
-.cxh-accent{background:linear-gradient(150deg,rgba(168,30,72,.36),rgba(90,14,38,.12));border-color:rgba(224,86,138,.38)}
+.cxh-accent{background:linear-gradient(150deg,rgba(107,31,46,.36),rgba(90,72,45,.12));border-color:rgba(224,86,138,.38)}
 .cxh-lab{font-size:10.5px;font-weight:650;letter-spacing:.12em;text-transform:uppercase;color:var(--fog-500)}
 .cxh-num{
   font-family:var(--serif);font-size:clamp(24px,3.2vw,36px);font-weight:600;
@@ -530,12 +581,15 @@ a{color:inherit}
 /* ============ WHY BATUMI ============ */
 /* «Почему Батуми» — кремовая секция с морским акцентом и фото */
 .sec-why{
-  background:linear-gradient(165deg,var(--cream) 0%,#FDF3E8 52%,var(--sand-100) 100%);
-  color:#241A31;
+  background:linear-gradient(172deg,var(--cream) 0%,#FBF7EF 55%,var(--sand-100) 100%);
+  color:var(--deep-ink);
+  border-top:1px solid var(--brass-line);
+  border-bottom:1px solid var(--brass-line);
 }
-.sec-why .sec-title{color:#1C1426}
-.sec-why .sec-kicker{color:var(--sea-700)}
-.sec-why .why-h{color:#1C1426}
+.sec-why .sec-title{color:var(--deep-ink)}
+.sec-why .sec-kicker{color:var(--forest-ink)}
+.sec-why .sec-kicker::after{background:rgba(34,58,45,.28)}
+.sec-why .why-h{color:var(--deep-ink)}
 .why-photo{
   position:relative;border-radius:var(--r-card);overflow:hidden;
   margin-bottom:clamp(30px,4vw,48px);aspect-ratio:21/8;
@@ -554,42 +608,42 @@ a{color:inherit}
 .tax-rows{display:flex;flex-direction:column}
 .tax-row{
   display:flex;align-items:baseline;gap:18px;
-  padding:16px 0;border-bottom:1px solid rgba(90,14,38,.12);
+  padding:16px 0;border-bottom:1px solid rgba(90,72,45,.12);
 }
-.tax-row:first-child{border-top:1px solid rgba(90,14,38,.12)}
+.tax-row:first-child{border-top:1px solid rgba(90,72,45,.12)}
 .tax-n{
-  font-family:var(--serif);font-size:clamp(22px,2.6vw,30px);font-weight:800;
-  color:var(--wine-600);min-width:88px;letter-spacing:var(--ls-display);
+  font-family:var(--serif);font-size:clamp(24px,2.8vw,34px);font-weight:400;
+  color:var(--wine-ink);min-width:92px;letter-spacing:0;
 }
-.tax-t{font-size:14.5px;color:#5B4E66;line-height:1.5}
+.tax-t{font-size:14.5px;color:var(--body-ink);line-height:1.5}
 .tax-row-hl{
-  background:linear-gradient(90deg,rgba(168,30,72,.1),rgba(255,180,84,.12));
-  margin:0 -14px;padding:16px 14px;border-radius:var(--r-ctl);
+  background:rgba(184,151,90,.10);border-left:2px solid var(--brass-500);
+  margin:0 -16px;padding:16px 16px;border-radius:0;
 }
-.tax-row-hl .tax-n{color:var(--wine-700)}
-.tax-row-hl .tax-t{color:#1C1426;font-weight:600}
+.tax-row-hl .tax-n{color:var(--wine-ink)}
+.tax-row-hl .tax-t{color:var(--deep-ink);font-weight:600}
 
 .mk-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .mk{
   background:#fff;padding:clamp(20px,2.4vw,28px);
-  border-radius:var(--r-card);border:1px solid rgba(90,14,38,.09);
-  box-shadow:0 12px 34px -20px rgba(90,14,38,.28);
+  border-radius:var(--r-card);border:1px solid rgba(90,72,45,.09);
+  box-shadow:0 12px 34px -20px rgba(90,72,45,.28);
   position:relative;overflow:hidden;transition:var(--dur) var(--ease);
 }
 .mk:hover{transform:translateY(-2px)}
 .mk::before{
-  content:'';position:absolute;left:0;top:0;bottom:0;width:3px;
-  background:var(--sea-400);
+  content:'';position:absolute;left:0;top:0;bottom:0;width:2px;
+  background:var(--brass-500);
 }
-.mk:nth-child(2)::before{background:var(--sun-400)}
-.mk:nth-child(3)::before{background:var(--ok)}
-.mk:nth-child(4)::before{background:var(--wine-500)}
-.mk-n{font-family:var(--serif);font-size:clamp(26px,3.2vw,36px);font-weight:800;color:#1C1426;line-height:1.02;letter-spacing:var(--ls-display)}
-.mk-t{font-size:13.5px;color:#5B4E66;margin-top:10px;line-height:1.5}
+.mk:nth-child(2)::before{background:var(--forest-600)}
+.mk:nth-child(3)::before{background:var(--wine-600)}
+.mk:nth-child(4)::before{background:var(--sea-500)}
+.mk-n{font-family:var(--serif);font-size:clamp(28px,3.4vw,40px);font-weight:400;color:var(--deep-ink);line-height:1.02;letter-spacing:0}
+.mk-t{font-size:13.5px;color:var(--body-ink);margin-top:10px;line-height:1.5}
 .mk-badge{
   margin-top:14px;padding:16px 20px;
-  background:linear-gradient(100deg,var(--wine-800),var(--wine-600) 58%,var(--sun-700));
-  color:#fff;border-radius:var(--r-ctl);
+  background:var(--wine-800);border:1px solid var(--brass-line);
+  color:var(--brass-300);border-radius:var(--r-ctl);
   font-size:12.5px;letter-spacing:.09em;text-transform:uppercase;font-weight:600;
   text-align:center;border-radius:var(--r-ctl);
 }
@@ -598,8 +652,8 @@ a{color:inherit}
 /* «О застройщике» — глубокий винный градиент с подсветкой */
 .sec-dev{
   background:
-    radial-gradient(90% 120% at 85% 8%, rgba(168,30,72,.30) 0%, rgba(168,30,72,0) 58%),
-    radial-gradient(70% 90% at 0% 100%, rgba(245,145,32,.14) 0%, rgba(245,145,32,0) 60%),
+    radial-gradient(90% 120% at 85% 8%, rgba(107,31,46,.34) 0%, rgba(107,31,46,0) 58%),
+    radial-gradient(70% 90% at 0% 100%, rgba(184,151,90,.10) 0%, rgba(184,151,90,0) 60%),
     linear-gradient(160deg,var(--ink-850) 0%,var(--surface) 55%,var(--ink-900) 100%);
 }
 .sec-dev .dev-visual img{box-shadow:0 30px 80px -30px rgba(10,7,16,.9)}
@@ -607,16 +661,16 @@ a{color:inherit}
 .dev-lede{font-size:clamp(16px,1.65vw,18.5px);color:var(--txt-2);line-height:1.68;margin-bottom:34px}
 .dev-lede strong{color:var(--txt);font-weight:650}
 .dev-points{display:flex;flex-direction:column;gap:24px}
-.dp{padding-left:20px;border-left:2px solid var(--gold)}
+.dp{padding-left:20px;border-left:1px solid var(--brass-line)}
 .dp-h{font-size:15.5px;font-weight:650;margin-bottom:7px;line-height:1.35}
 .dp-t{font-size:14.3px;color:var(--txt-2);line-height:1.6}
 .dp-link{
   display:inline-block;margin-top:11px;font-family:var(--mono);
-  font-size:11.5px;letter-spacing:.04em;color:var(--wine-400);
-  text-decoration:none;border-bottom:1px solid rgba(224,86,138,.34);
+  font-size:10.5px;letter-spacing:var(--ls-mono);text-transform:uppercase;color:var(--brass-400);
+  text-decoration:none;border-bottom:1px solid var(--brass-line);
   padding-bottom:2px;transition:var(--dur) var(--ease);
 }
-.dp-link:hover{color:var(--wine-500);border-bottom-color:var(--wine-500)}
+.dp-link:hover{color:var(--brass-300);border-bottom-color:var(--brass-400)}
 .dev-visual{position:relative}
 .dev-visual img{border-radius:var(--r-card);width:100%;object-fit:cover;aspect-ratio:4/5}
 .dev-badges{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--line);margin-top:2px;border:1px solid var(--line)}
@@ -628,7 +682,7 @@ a{color:inherit}
 /* «Объекты» — фактурная тёмная секция с винной подсветкой сверху */
 .sec-projects{
   background:
-    radial-gradient(120% 60% at 50% 0%, rgba(125,20,53,.34) 0%, rgba(125,20,53,0) 62%),
+    radial-gradient(120% 60% at 50% 0%, rgba(84,23,42,.40) 0%, rgba(84,23,42,0) 62%),
     linear-gradient(180deg,var(--ink-950) 0%,var(--ink-900) 40%,var(--ink-850) 100%);
 }
 .proj{
@@ -681,8 +735,8 @@ a{color:inherit}
 .pp-v{font-size:14.2px;font-weight:650;text-align:right;white-space:nowrap}
 .proj-for{
   font-size:13.5px;line-height:1.55;color:var(--txt);
-  background:var(--gold-soft);border-left:2px solid var(--gold);
-  padding:14px 16px;border-radius:0 3px 3px 0;
+  background:rgba(184,151,90,.07);border-left:1px solid var(--brass-500);
+  padding:15px 18px;border-radius:0;
 }
 
 /* ============ CASES TABLE ============ */
@@ -730,25 +784,25 @@ a{color:inherit}
 /* тёмный низ + винный подтон сбоку — текст всегда читаем */
 .shot-scrim::before{
   content:'';position:absolute;inset:0;
-  background:linear-gradient(180deg,rgba(10,7,16,.55) 0%,rgba(10,7,16,.10) 30%,rgba(10,7,16,.62) 70%,rgba(10,7,16,.90) 100%);
+  background:linear-gradient(180deg,rgba(15,13,11,.58) 0%,rgba(15,13,11,.08) 30%,rgba(15,13,11,.64) 70%,rgba(15,13,11,.93) 100%);
 }
 /* винная «подушка» слева — только под текстом, фото справа остаётся чистым */
 .shot-scrim::after{
   content:'';position:absolute;inset:0;
   background:linear-gradient(96deg,
-    rgba(10,7,16,.90) 0%,
-    rgba(74,11,31,.72) 24%,
-    rgba(74,11,31,.30) 44%,
-    rgba(10,7,16,.04) 62%,
-    rgba(10,7,16,0) 100%);
+    rgba(15,13,11,.92) 0%,
+    rgba(61,17,25,.74) 24%,
+    rgba(61,17,25,.30) 44%,
+    rgba(15,13,11,.04) 62%,
+    rgba(15,13,11,0) 100%);
 }
 /* вариант с галереей: текст сверху слева, снимок дышит */
 .shot-gallery .shot-scrim::after{
   background:linear-gradient(120deg,
-    rgba(10,7,16,.92) 0%,
-    rgba(74,11,31,.60) 34%,
-    rgba(10,7,16,.34) 58%,
-    rgba(10,7,16,.18) 100%);
+    rgba(15,13,11,.94) 0%,
+    rgba(61,17,25,.62) 34%,
+    rgba(15,13,11,.34) 58%,
+    rgba(15,13,11,.18) 100%);
 }
 .shot-inner{
   position:relative;z-index:2;width:100%;max-width:var(--maxw);
@@ -756,14 +810,15 @@ a{color:inherit}
 }
 .shot-body{max-width:660px}
 .shot-kicker{
-  display:inline-block;font-family:var(--mono);font-size:10.5px;font-weight:500;
-  letter-spacing:var(--ls-mono);text-transform:uppercase;color:#fff;
-  background:var(--wine-600);padding:7px 14px;border-radius:var(--r-chip);
-  margin-bottom:20px;
+  display:inline-block;font-family:var(--mono);font-size:10px;font-weight:500;
+  letter-spacing:var(--ls-mono);text-transform:uppercase;color:var(--brass-300);
+  background:rgba(15,13,11,.42);border:1px solid var(--brass-line);
+  padding:8px 16px;border-radius:var(--r-ctl);margin-bottom:22px;
+  backdrop-filter:blur(3px);
 }
 .shot-title{
-  font-family:var(--serif);font-weight:800;
-  font-size:clamp(2rem,4.6vw,3.6rem);line-height:1.02;
+  font-family:var(--serif);font-weight:300;
+  font-size:clamp(2.2rem,5vw,4rem);line-height:1.02;
   letter-spacing:var(--ls-display);color:#fff;margin-bottom:18px;
   text-shadow:0 2px 30px rgba(10,7,16,.6);
 }
@@ -774,14 +829,14 @@ a{color:inherit}
 }
 .shot-lede strong{color:#fff;font-weight:650}
 .shot-stats{
-  display:flex;flex-wrap:wrap;gap:clamp(18px,3vw,44px);
-  margin-top:clamp(24px,3vw,34px);padding-top:22px;
-  border-top:1px solid rgba(255,255,255,.24);
+  display:flex;flex-wrap:wrap;gap:clamp(18px,3vw,48px);
+  margin-top:clamp(24px,3vw,36px);padding-top:24px;
+  border-top:1px solid var(--brass-line);
 }
 .shot-stat-n{
-  font-family:var(--serif);font-size:clamp(22px,2.9vw,34px);font-weight:800;
-  color:#fff;line-height:1;letter-spacing:var(--ls-display);
-  text-shadow:0 2px 20px rgba(10,7,16,.7);
+  font-family:var(--serif);font-size:clamp(26px,3.3vw,40px);font-weight:400;
+  color:var(--cream);line-height:1;letter-spacing:0;
+  text-shadow:0 2px 24px rgba(15,13,11,.8);
 }
 .shot-stat-t{
   font-family:var(--mono);font-size:10px;letter-spacing:var(--ls-mono);
@@ -804,6 +859,14 @@ a{color:inherit}
   box-shadow:0 26px 60px -30px rgba(10,7,16,.95);
 }
 .shot-gal img{width:100%;height:100%;object-fit:cover;display:block}
+/* галерея на три карточки — для Stay & Rent */
+.shot-gal-3{grid-template-columns:1.3fr 1fr 1fr}
+@media(max-width:900px){.shot-gal-3{grid-template-columns:1fr 1fr}
+  .shot-gal-3 figure:first-child{grid-column:1/-1}}
+@media(max-width:640px){.shot-gal-3{grid-template-columns:1fr}
+  .shot-gal-3 figure:first-child{grid-column:auto}}
+/* латунная нить по краю карточек — деталь Old Money */
+.shot-gal figure{border-color:var(--brass-line)}
 .shot-gal figcaption{
   position:absolute;left:0;right:0;bottom:0;padding:22px 16px 12px;
   background:linear-gradient(0deg,rgba(10,7,16,.92),rgba(10,7,16,0));
@@ -835,7 +898,7 @@ a{color:inherit}
 .band-tint{position:absolute;inset:0;mix-blend-mode:soft-light;pointer-events:none}
 .band figure:nth-child(1) .band-tint{background:linear-gradient(200deg,rgba(255,180,84,.34),transparent 62%)}
 .band figure:nth-child(2) .band-tint{background:linear-gradient(200deg,rgba(63,197,217,.30),transparent 62%)}
-.band figure:nth-child(3) .band-tint{background:linear-gradient(200deg,rgba(168,30,72,.34),transparent 62%)}
+.band figure:nth-child(3) .band-tint{background:linear-gradient(200deg,rgba(107,31,46,.34),transparent 62%)}
 @media(max-width:760px){
   .band{grid-template-columns:1fr 1fr;height:auto}
   .band figure{aspect-ratio:4/3}
@@ -845,7 +908,7 @@ a{color:inherit}
 /* ============ CASES: тёмная, но с винной глубиной ============ */
 .sec-cases{
   background:
-    radial-gradient(110% 80% at 20% 0%, rgba(125,20,53,.30) 0%, rgba(125,20,53,0) 60%),
+    radial-gradient(110% 80% at 20% 0%, rgba(84,23,42,.34) 0%, rgba(84,23,42,0) 60%),
     linear-gradient(180deg,var(--ink-900) 0%,var(--ink-950) 100%) !important;
 }
 .cases-table{
@@ -859,23 +922,29 @@ a{color:inherit}
 /* ============ HOW ============ */
 /* «Как проходит покупка» — светлая секция, замыкает светлую рифму */
 .sec-how{
-  background:linear-gradient(200deg,var(--sand-100) 0%,var(--cream) 48%,#FDF2E6 100%);
-  color:#241A31;
+  background:linear-gradient(200deg,var(--sand-100) 0%,var(--cream) 50%,#FBF6ED 100%);
+  color:var(--deep-ink);
+  border-top:1px solid var(--brass-line);
 }
-.sec-how .sec-title{color:#1C1426}
-.sec-how .sec-kicker{color:var(--wine-600)}
-.sec-how .how-h{color:#1C1426}
-.sec-how .ht-h{color:#1C1426}
-.sec-how .ht-t,.sec-how .hs-list li,.sec-how .hs-note{color:#5B4E66}
-.sec-how .hs-list strong{color:#1C1426}
-.sec-how .ht{border-bottom-color:rgba(90,14,38,.12)}
-.sec-how .ht-n{color:var(--wine-600);font-weight:800}
+.sec-how .sec-title{color:var(--deep-ink)}
+.sec-how .sec-kicker{color:var(--brass-700)}
+.sec-how .sec-kicker::after{background:rgba(110,87,41,.32)}
+.sec-how .how-h{color:var(--deep-ink)}
+.sec-how .ht-h{color:var(--deep-ink)}
+.sec-how .ht-t,.sec-how .hs-list li,.sec-how .hs-note{color:var(--body-ink)}
+.sec-how .hs-list strong{color:var(--deep-ink)}
+.sec-how .ht{border-bottom-color:rgba(90,72,45,.12)}
+.sec-how .ht-n{color:var(--wine-ink);font-weight:500}
 .sec-how .how-steps{
-  background:#fff;border-color:rgba(90,14,38,.1);
-  box-shadow:0 18px 50px -26px rgba(90,14,38,.3);
+  background:#fff;border-color:rgba(90,72,45,.1);
+  box-shadow:0 18px 50px -26px rgba(90,72,45,.3);
 }
-.sec-how .hs-note{border-top-color:rgba(90,14,38,.12)}
-.sec-how .hs-list li::before{background:var(--wine-600)}
+.sec-how .hs-note{border-top-color:rgba(90,72,45,.12)}
+.sec-how .hs-list li::before{
+  background:transparent;color:var(--wine-ink);
+  border:1px solid rgba(74,20,32,.36);font-family:var(--serif);
+  font-size:13px;font-weight:500;
+}
 .how-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(26px,4vw,60px)}
 .how-terms{display:flex;flex-direction:column;gap:20px}
 .ht{display:flex;gap:18px;align-items:flex-start;padding-bottom:20px;border-bottom:1px solid var(--line)}
@@ -910,7 +979,7 @@ a{color:inherit}
 /* ============ CTA ============ */
 .sec-cta{position:relative;color:var(--txt-light);overflow:hidden;padding:clamp(70px,10vw,130px) 0}
 .cta-bg{position:absolute;inset:0;background-size:cover;background-position:center}
-.cta-scrim{position:absolute;inset:0;background:linear-gradient(120deg,rgba(10,7,16,.97) 0%,rgba(90,14,38,.72) 55%,rgba(18,11,24,.82) 100%)}
+.cta-scrim{position:absolute;inset:0;background:linear-gradient(120deg,rgba(15,13,11,.97) 0%,rgba(61,17,25,.80) 55%,rgba(23,19,16,.88) 100%)}
 .cta-wrap{position:relative;z-index:2}
 .cta-inner{max-width:760px}
 .cta-title{
@@ -952,7 +1021,7 @@ a{color:inherit}
   text-transform:uppercase;color:var(--fog-600);
 }
 .fl-v{font-size:13.5px;font-weight:600;color:var(--fog-300);transition:var(--dur) var(--ease)}
-.foot-links a:hover .fl-v{color:var(--wine-400)}
+.foot-links a:hover .fl-v{color:var(--brass-400)}
 .foot-legal{font-size:11.8px;line-height:1.68;max-width:96ch}
 .foot-contact{font-size:12.5px;color:var(--fog-300);font-weight:550;letter-spacing:.02em}
 
@@ -1159,6 +1228,7 @@ a{color:inherit}
       </a>
       <nav class="topnav">
         <a href="#ramada">Ramada</a>
+        <a href="#stayrent">Stay &amp; Rent</a>
         <a href="#projects">Объекты</a>
         <a href="#calculator">Калькулятор</a>
         <a href="#developer">Застройщик</a>
@@ -1568,7 +1638,7 @@ a{color:inherit}
       </div>
 
       <div class="dev-visual">
-        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="__IMGREF_I5__" alt="Ramada Residences by Wyndham Batumi — вид с высоты">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="__IMGREF_I5__" alt="ONE Development — терраса с видом на море">
         <div class="dev-badges">
           <div class="db"><div class="db-n">5</div><div class="db-t">проектов<br>в работе</div></div>
           <div class="db"><div class="db-n">415K</div><div class="db-t">м² строи-<br>тельства</div></div>
@@ -1592,7 +1662,7 @@ a{color:inherit}
     <figcaption>Саперави · цвет этой презентации</figcaption>
   </figure>
   <figure>
-    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="__IMGREF_I8__" alt="Ramada Residences — номер отельного стандарта">
+    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="__IMGREF_I8__" alt="Stay &amp; Rent — санузел со стиральной машиной">
     <span class="band-tint"></span>
     <figcaption>Формат «под ключ» · готово к сдаче</figcaption>
   </figure>
@@ -1649,6 +1719,67 @@ a{color:inherit}
         <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="__IMGREF_I12__" alt="Ramada Residences — спальня с панорамным окном">
         <figcaption>Спальня · панорамное окно</figcaption>
       </figure>
+
+    </div>
+  </div>
+</section></div>
+
+<!-- ================= STAY & RENT: ФОТО НА ВСЮ СТРАНИЦУ ================= -->
+<div class="page"><section class="shot shot-sr" id="stayrent">
+  <div class="shot-bg" data-bg="__IMGREF_I13__"></div>
+  <div class="shot-scrim"></div>
+  <div class="shot-credit">Stay &amp; Rent · рендер застройщика</div>
+  <div class="shot-inner">
+    <div class="shot-body">
+      <div class="shot-kicker">Stay &amp; Rent · Новый бульвар</div>
+      <h2 class="shot-title">Курортный квартал<br>в 680 метрах от моря</h2>
+      <p class="shot-lede">
+        Бассейн под пальмами, спа-зона, коворкинг с библиотекой, фитнес — инфраструктура
+        уровня отеля внутри жилого комплекса. Новый бульвар — <strong>единственный район
+        Батуми с утверждённым генпланом развития</strong>, и это защищает вид из окна
+        от случайной застройки.
+      </p>
+      <div class="shot-stats">
+        <div><div class="shot-stat-n">22</div><div class="shot-stat-t">этажа</div></div>
+        <div><div class="shot-stat-n">420</div><div class="shot-stat-t">квартир</div></div>
+        <div><div class="shot-stat-n">680 м</div><div class="shot-stat-t">до моря</div></div>
+        <div><div class="shot-stat-n">Q2 2027</div><div class="shot-stat-t">сдача</div></div>
+        <div><div class="shot-stat-n">от 60%</div><div class="shot-stat-t">рост к сдаче</div></div>
+      </div>
+    </div>
+  </div>
+</section></div>
+
+<!-- ================= STAY & RENT: ИНТЕРЬЕРЫ ================= -->
+<div class="page"><section class="shot shot-sr-in shot-gallery">
+  <div class="shot-bg" data-bg="__IMGREF_I14__"></div>
+  <div class="shot-scrim"></div>
+  <div class="shot-credit">Stay &amp; Rent · вечерняя аркада и лобби</div>
+  <div class="shot-inner">
+    <div class="shot-body">
+      <div class="shot-kicker">Что внутри</div>
+      <h2 class="shot-title">Продумано под аренду</h2>
+      <p class="shot-lede">
+        Только студии и однушки — самые ходовые форматы у арендаторов. В каждой квартире
+        встроенная кухня, гардеробная и полностью укомплектованный санузел
+        со стиральной машиной. Заезжать можно с чемоданом.
+      </p>
+    </div>
+
+    <div class="shot-gal shot-gal-3">
+      <figure>
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="__IMGREF_I15__" alt="Stay &amp; Rent — спальня с кухней-гостиной">
+        <figcaption>Спальня и кухня-гостиная</figcaption>
+      </figure>
+      <figure>
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="__IMGREF_I16__" alt="Stay &amp; Rent — гардеробная">
+        <figcaption>Гардеробная</figcaption>
+      </figure>
+      <figure>
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="__IMGREF_I17__" alt="Stay &amp; Rent — прихожая со встроенными шкафами">
+        <figcaption>Прихожая</figcaption>
+      </figure>
+
     </div>
   </div>
 </section></div>
@@ -1666,11 +1797,11 @@ a{color:inherit}
     <!-- RAMADA -->
     <article class="proj">
       <div class="proj-media">
-        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="__IMGREF_I13__" alt="Ramada Residences by Wyndham Batumi — фасад со стороны Аллеи Героев">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="__IMGREF_I18__" alt="Ramada Residences by Wyndham Batumi — фасад со стороны Аллеи Героев">
         <div class="proj-flag proj-flag-gold">Максимальная доходность</div>
       </div><article class="proj">
       <div class="proj-media">
-        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="__IMGREF_I14__" alt="Ramada Residences by Wyndham Batumi — фасад со стороны Аллеи Героев">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="__IMGREF_I19__" alt="Ramada Residences by Wyndham Batumi — фасад со стороны Аллеи Героев">
         <div class="proj-flag proj-flag-gold">Максимальная доходность</div>
       </div>
       <div class="proj-body">
@@ -1706,7 +1837,7 @@ a{color:inherit}
     </article></div></section></div>
 <div class="page page-proj"><section class="sec sec-projects"><div class="wrap"><article class="proj proj-rev">
       <div class="proj-media">
-        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="__IMGREF_I15__" alt="ONE — жилой комплекс бизнес-класса в центре Батуми">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="__IMGREF_I20__" alt="ONE — жилой комплекс бизнес-класса в центре Батуми">
         <div class="proj-flag">European Property Awards 25–26</div>
       </div>
       <div class="proj-body">
@@ -1742,7 +1873,7 @@ a{color:inherit}
     </article></div></section></div>
 <div class="page page-proj"><section class="sec sec-projects"><div class="wrap"><article class="proj">
       <div class="proj-media">
-        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="__IMGREF_I16__" alt="Stay &amp; Rent — Новый бульвар, Батуми">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="__IMGREF_I21__" alt="Stay &amp; Rent — фасад комплекса на Новом бульваре">
         <div class="proj-flag proj-flag-gold">Лучший рост стоимости</div>
       </div>
       <div class="proj-body">
@@ -1779,7 +1910,7 @@ a{color:inherit}
     </article></div></section></div>
 <div class="page page-proj"><section class="sec sec-projects"><div class="wrap"><article class="proj proj-rev">
       <div class="proj-media">
-        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="__IMGREF_I17__" alt="HOME — таунхаусы в Гонио">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="__IMGREF_I22__" alt="HOME — таунхаусы в Гонио">
         <div class="proj-flag">Сдача этой зимой</div>
       </div>
       <div class="proj-body">
@@ -1815,7 +1946,7 @@ a{color:inherit}
     </article></div></section></div>
 <div class="page page-proj"><section class="sec sec-projects"><div class="wrap"><article class="proj">
       <div class="proj-media">
-        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="__IMGREF_I18__" alt="SportCity — Новый бульвар, Батуми">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="__IMGREF_I23__" alt="SportCity — Новый бульвар, Батуми">
         <div class="proj-flag">Старт продаж · лучшие цены</div>
       </div>
       <div class="proj-body">
@@ -1961,7 +2092,7 @@ a{color:inherit}
 
 <!-- ================= CTA ================= -->
 <div class="page page-last"><section class="sec sec-cta" id="contact">
-  <div class="cta-bg" data-bg="__IMGREF_I19__"></div>
+  <div class="cta-bg" data-bg="__IMGREF_I24__"></div>
   <div class="cta-scrim"></div>
   <div class="wrap cta-wrap">
     <div class="cta-inner">
