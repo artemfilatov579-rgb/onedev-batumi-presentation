@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Батуми 2026: что показывают отчёты | real major .life</title>
+<meta name="description" content="Разбор рынка недвижимости Батуми по данным Galt &amp; Taggart: доходность падает четвёртый год до 7,1%, 13 000 непроданных квартир, вторичка на 21,9% ниже первички. Семь фактов и пять вопросов перед покупкой.">
+<meta property="og:title" content="Батуми 2026: что показывают отчёты вместо буклетов">
+<meta property="og:description" content="Данные Galt &amp; Taggart, а не презентации застройщиков. Семь фактов, которые стоит знать до покупки.">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@400;500;600;650&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   ЛИД-МАГНИТ «Батуми 2026: что показывают отчёты»
+   Формат: A4-страницы для PDF, они же секции на экране.
+   Дизайн-система Old Money — как в презентации и лендинге тура.
+   ============================================================ */
+:root{
+  --wine-400:#A8556A; --wine-500:#8C3247; --wine-600:#6B1F2E;
+  --wine-700:#54172A; --wine-800:#3D1119; --wine-ink:#4A1420;
+  --brass-300:#D6BE8E; --brass-400:#C4A96D; --brass-500:#B8975A;
+  --brass-600:#96773F; --brass-700:#6E5729;
+  --brass-line:rgba(184,151,90,.30);
+  --forest-400:#5C8570; --forest-600:#2F4A3B; --forest-ink:#223A2D;
+  --ink-950:#0F0D0B; --ink-900:#171310; --ink-850:#1E1916;
+  --surface:#241E1A; --surface-2:#2C2521;
+  --cream:#F7F3EA; --sand-100:#F0EADC; --sand-200:#E4DACA;
+  --fog-100:#F3EEE4; --fog-300:#D8CFC0; --fog-500:#A2988A; --fog-600:#7E7568;
+  --deep-ink:#1A1512; --body-ink:#544A40;
+  --line-1:rgba(243,238,228,.07); --line-2:rgba(243,238,228,.13);
+  --warm-line:rgba(90,72,45,.14);
+  --sans:'Inter',system-ui,-apple-system,sans-serif;
+  --serif:'Cormorant Garamond','Times New Roman',Georgia,serif;
+  --ls-mono:.20em;
+  --r:3px;
+  /* лист A4 в CSS-пикселях */
+  --pw:1123px; --ph:1587px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--sans);background:#0A0908;color:var(--fog-100);
+  line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+
+/* ---------- страница ---------- */
+.page{
+  position:relative;width:var(--pw);min-height:var(--ph);
+  margin:0 auto 28px;overflow:hidden;
+  display:flex;flex-direction:column;justify-content:center;
+}
+.pg-in{position:relative;padding:86px 92px;width:100%}
+.pg-in-rel{z-index:2}
+
+.pg-dark{
+  background:
+    radial-gradient(100% 70% at 82% 0%, rgba(107,31,46,.28) 0%, rgba(107,31,46,0) 58%),
+    radial-gradient(80% 80% at 0% 100%, rgba(184,151,90,.07) 0%, rgba(184,151,90,0) 60%),
+    var(--ink-950);
+}
+.pg-light{
+  background:linear-gradient(168deg,var(--cream) 0%,var(--sand-100) 62%,var(--sand-200) 100%);
+  color:var(--deep-ink);
+}
+.pg-cream{
+  background:linear-gradient(178deg,var(--cream) 0%,#FBF7EF 55%,var(--sand-100) 100%);
+  color:var(--deep-ink);
+}
+
+/* ---------- типографика ---------- */
+.s-k{
+  font-family:var(--sans);font-size:10px;font-weight:500;
+  letter-spacing:var(--ls-mono);text-transform:uppercase;
+  color:var(--brass-700);margin-bottom:22px;
+  display:flex;align-items:center;gap:14px;
+}
+.s-k::after{content:'';flex:1;max-width:110px;height:1px;background:rgba(110,87,41,.3)}
+.s-k-d{color:var(--brass-400)}
+.s-k-d::after{background:var(--brass-line)}
+
+.s-h{
+  font-family:var(--serif);font-weight:400;
+  font-size:52px;line-height:1.05;letter-spacing:-.012em;
+  color:var(--deep-ink);margin-bottom:26px;
+}
+.s-h-d{color:var(--fog-100)}
+
+.lede{font-size:19px;line-height:1.62;color:var(--body-ink);max-width:66ch;margin-bottom:38px}
+.lede-d{color:var(--fog-300)}
+.p{font-size:15.5px;line-height:1.68;color:var(--body-ink);margin-bottom:16px}
+.p-d{color:var(--fog-300)}
+.p b,.p-d b{font-weight:650}
+.p b{color:var(--deep-ink)}
+.p-d b{color:var(--fog-100)}
+
+.cols2{display:grid;grid-template-columns:1fr 1fr;gap:46px}
+.col p{font-size:15.5px;line-height:1.68;color:var(--body-ink);margin-bottom:16px}
+.pg-dark .col p,.pg-buyers .col p{color:var(--fog-300)}
+
+/* ---------- логотип ---------- */
+.rmlogo-mark{
+  width:22px;height:22px;border:1.4px solid var(--brass-500);border-radius:2px;
+  display:inline-flex;gap:2px;padding:3.4px;flex-shrink:0;vertical-align:middle;
+}
+.rmlogo-mark i{flex:1;background:var(--brass-500);display:block}
+.rmlogo-mark i:last-child{opacity:.45}
+.rmlogo-txt{
+  font-size:13px;font-weight:500;letter-spacing:.06em;
+  display:inline-flex;gap:.42em;align-items:baseline;margin-left:10px;
+}
+.rmlogo-txt b{color:var(--fog-100);font-weight:500}
+.rmlogo-txt em{color:var(--brass-400);font-style:normal;font-weight:500}
+.rmlogo-txt s{color:var(--fog-600);text-decoration:none}
+
+/* ---------- 1. обложка ---------- */
+.pg-cover{background:var(--ink-950);justify-content:stretch}
+.cover-bg{position:absolute;inset:0;background-size:cover;background-position:center}
+.cover-scrim{
+  position:absolute;inset:0;
+  background:
+    linear-gradient(180deg,rgba(15,13,11,.90) 0%,rgba(15,13,11,.55) 32%,rgba(15,13,11,.86) 72%,rgba(15,13,11,.97) 100%),
+    linear-gradient(96deg,rgba(15,13,11,.88) 0%,rgba(61,17,25,.60) 40%,rgba(15,13,11,.10) 100%);
+}
+.cover-in{
+  position:relative;z-index:2;flex:1;
+  display:flex;flex-direction:column;justify-content:space-between;
+  padding:76px 92px;
+}
+.cover-k{
+  font-size:10px;font-weight:500;letter-spacing:var(--ls-mono);
+  text-transform:uppercase;color:var(--brass-300);
+  border:1px solid var(--brass-line);border-radius:var(--r);
+  padding:9px 18px;display:inline-block;margin-bottom:34px;
+}
+.cover-h{
+  font-family:var(--serif);font-weight:300;
+  font-size:94px;line-height:.98;letter-spacing:-.014em;
+  color:var(--cream);margin-bottom:30px;
+}
+.cover-h em{font-style:italic;font-weight:400;color:var(--brass-300)}
+.cover-l{
+  font-size:20px;line-height:1.6;color:var(--fog-300);max-width:56ch;
+}
+.cover-foot{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:34px;
+  padding-top:30px;border-top:1px solid var(--brass-line);
+}
+.cf-item b{
+  display:block;font-family:var(--serif);font-size:44px;font-weight:400;
+  color:var(--brass-300);line-height:1;
+}
+.cf-item span{
+  display:block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--fog-500);margin-top:10px;line-height:1.4;
+}
+
+/* ---------- сноска источника ---------- */
+.src-note{
+  margin-top:38px;padding:22px 26px;
+  background:rgba(184,151,90,.10);border-left:2px solid var(--brass-500);
+  font-size:13.5px;line-height:1.65;color:var(--body-ink);
+}
+.src-note b{color:var(--deep-ink)}
+
+/* ---------- диаграмма доходности ---------- */
+.chart{display:flex;flex-direction:column;gap:14px;margin-bottom:40px}
+.ch-row{display:grid;grid-template-columns:150px 1fr 78px;align-items:center;gap:20px}
+.ch-lab{font-size:13px;color:var(--fog-500);letter-spacing:.04em}
+.ch-bar{height:14px;background:rgba(243,238,228,.06);border-radius:2px;overflow:hidden}
+.ch-bar span{
+  display:block;height:100%;
+  background:linear-gradient(90deg,var(--wine-700),var(--wine-400));
+}
+.ch-bar-fc span{
+  background:repeating-linear-gradient(45deg,
+    rgba(168,85,106,.5) 0 6px, rgba(168,85,106,.18) 6px 12px);
+}
+.ch-val{
+  font-family:var(--serif);font-size:24px;font-weight:500;
+  color:var(--fog-300);text-align:right;
+}
+.ch-now .ch-lab{color:var(--fog-100);font-weight:600}
+.ch-now .ch-val{color:var(--brass-300);font-size:29px}
+.ch-fc .ch-lab,.ch-fc .ch-val{color:var(--fog-600)}
+
+/* ---------- выноска ---------- */
+.callout{
+  background:#fff;border:1px solid var(--warm-line);
+  border-left:2px solid var(--wine-600);
+  padding:26px 30px;
+}
+.callout-d{
+  background:rgba(255,255,255,.045);border-color:var(--line-2);
+  border-left-color:var(--brass-500);
+}
+.co-h{
+  font-size:10px;font-weight:500;letter-spacing:var(--ls-mono);
+  text-transform:uppercase;color:var(--brass-700);margin-bottom:14px;
+}
+.callout-d .co-h{color:var(--brass-400)}
+.co-t{font-size:15px;line-height:1.68;color:var(--body-ink)}
+.callout-d .co-t{color:var(--fog-300)}
+.co-t b{font-weight:650;color:var(--deep-ink)}
+.callout-d .co-t b{color:var(--fog-100)}
+
+/* ---------- три цифры ---------- */
+.stat3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:34px}
+.st{
+  background:#fff;border:1px solid var(--warm-line);
+  border-top:2px solid var(--wine-600);padding:26px 24px;
+}
+.st b{
+  display:block;font-family:var(--serif);font-size:46px;font-weight:400;
+  color:var(--wine-ink);line-height:1;
+}
+.st span{display:block;font-size:13px;color:var(--body-ink);margin-top:12px;line-height:1.5}
+
+/* ---------- динамика продаж ---------- */
+.dyn{
+  margin-top:32px;padding:26px 30px;
+  background:rgba(255,255,255,.6);border:1px solid var(--warm-line);
+}
+.dyn-h{
+  font-size:10px;font-weight:500;letter-spacing:var(--ls-mono);
+  text-transform:uppercase;color:var(--brass-700);margin-bottom:20px;
+}
+.dyn-row{display:grid;grid-template-columns:200px 1fr 70px;align-items:center;gap:18px;margin-bottom:12px}
+.dyn-m{font-size:13.5px;color:var(--body-ink)}
+.dyn-b{height:12px;background:rgba(90,72,45,.1);border-radius:2px;overflow:hidden}
+.dyn-b span{display:block;height:100%;background:linear-gradient(90deg,var(--brass-600),var(--brass-400))}
+.dyn-v{font-family:var(--serif);font-size:22px;font-weight:500;color:var(--deep-ink);text-align:right}
+.dyn-n{font-size:12px;color:var(--body-ink);opacity:.8;line-height:1.55;margin-top:14px}
+
+/* ---------- разрыв цен ---------- */
+.gap{
+  display:grid;grid-template-columns:1fr auto 1fr;align-items:center;
+  gap:26px;margin-bottom:38px;
+}
+.gap-side{
+  background:rgba(255,255,255,.05);border:1px solid var(--line-2);
+  border-top:2px solid var(--wine-500);padding:30px 32px;
+}
+.gap-side-2{border-top-color:var(--forest-400)}
+.gap-k{
+  font-size:10px;font-weight:500;letter-spacing:var(--ls-mono);
+  text-transform:uppercase;color:var(--fog-500);margin-bottom:14px;
+}
+.gap-v{font-family:var(--serif);font-size:56px;font-weight:400;color:var(--fog-100);line-height:1}
+.gap-s{font-size:13px;color:var(--fog-500);margin-top:10px}
+.gap-mid{text-align:center;padding:0 6px}
+.gap-arrow{
+  font-family:var(--serif);font-size:38px;font-weight:500;color:var(--brass-300);
+  line-height:1;
+}
+.gap-arrow-s{
+  font-size:9.5px;letter-spacing:var(--ls-mono);text-transform:uppercase;
+  color:var(--fog-600);margin-top:8px;
+}
+
+/* ---------- мини-блоки ---------- */
+.mini-k{
+  font-size:9.5px;font-weight:500;letter-spacing:var(--ls-mono);
+  text-transform:uppercase;color:var(--brass-700);margin-bottom:10px;
+}
+.mini-k-d{color:var(--brass-400)}
+.mini-h{
+  font-family:var(--serif);font-size:29px;font-weight:400;
+  color:var(--deep-ink);line-height:1.14;margin-bottom:18px;
+}
+.mini-h-d{color:var(--fog-100)}
+.mini-box{
+  margin-top:20px;padding:18px 20px;
+  background:rgba(184,151,90,.11);border-left:2px solid var(--brass-500);
+  font-size:13.5px;line-height:1.62;color:var(--body-ink);
+}
+
+/* ---------- распроданность ---------- */
+.sold{margin-bottom:20px}
+.sold-row{display:grid;grid-template-columns:150px 1fr 74px;align-items:center;gap:16px;margin-bottom:12px}
+.sold-l{font-size:13.5px;color:var(--body-ink)}
+.sold-b{height:13px;background:rgba(90,72,45,.1);border-radius:2px;overflow:hidden}
+.sold-b span{display:block;height:100%;background:linear-gradient(90deg,var(--forest-600),var(--forest-400))}
+.sold-v{font-family:var(--serif);font-size:22px;font-weight:500;color:var(--forest-ink);text-align:right}
+
+/* ---------- страница покупателей с фото ---------- */
+.pg-buyers{background:var(--ink-950)}
+.buy-bg{position:absolute;inset:0;background-size:cover;background-position:center}
+.buy-scrim{
+  position:absolute;inset:0;
+  background:linear-gradient(160deg,rgba(15,13,11,.96) 0%,rgba(61,17,25,.90) 55%,rgba(15,13,11,.94) 100%);
+}
+
+/* ---------- список вопросов ---------- */
+.qlist{list-style:none;counter-reset:q;margin-bottom:34px}
+.qlist li{
+  counter-increment:q;position:relative;
+  padding:0 0 24px 62px;margin-bottom:22px;
+  border-bottom:1px solid var(--warm-line);
+}
+.qlist li:last-child{border-bottom:none;padding-bottom:0;margin-bottom:0}
+.qlist li::before{
+  content:counter(q);position:absolute;left:0;top:-4px;
+  font-family:var(--serif);font-size:32px;font-weight:400;
+  color:var(--brass-600);
+}
+.q-h{
+  font-family:var(--serif);font-size:25px;font-weight:400;
+  color:var(--deep-ink);line-height:1.2;margin-bottom:10px;
+}
+.q-t{font-size:15px;line-height:1.66;color:var(--body-ink)}
+.q-t b{color:var(--deep-ink);font-weight:650}
+
+.hz{
+  padding:28px 32px;background:var(--wine-800);
+  border:1px solid var(--brass-line);
+}
+.hz-h{
+  font-family:var(--serif);font-size:26px;font-weight:400;
+  color:var(--brass-300);margin-bottom:12px;
+}
+.hz-t{font-size:15.5px;line-height:1.68;color:var(--fog-300)}
+.hz-t b{color:var(--cream);font-weight:600}
+
+/* ---------- последняя страница ---------- */
+.pg-last{background:var(--ink-950)}
+.last-bg{position:absolute;inset:0;background-size:cover;background-position:center}
+.last-scrim{
+  position:absolute;inset:0;
+  background:linear-gradient(150deg,rgba(15,13,11,.96) 0%,rgba(61,17,25,.88) 50%,rgba(15,13,11,.95) 100%);
+}
+.last-h{
+  font-family:var(--serif);font-size:56px;font-weight:300;line-height:1.04;
+  letter-spacing:-.012em;color:var(--cream);margin-bottom:24px;
+}
+.last-l{font-size:19px;line-height:1.64;color:var(--fog-300);max-width:60ch;margin-bottom:40px}
+
+.last-links{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:44px}
+.ll{
+  display:flex;flex-direction:column;gap:7px;
+  background:rgba(255,255,255,.05);border:1px solid var(--line-2);
+  padding:22px 24px;
+}
+.ll-main{background:var(--wine-700);border-color:var(--brass-line)}
+.ll-k{
+  font-size:9.5px;font-weight:500;letter-spacing:var(--ls-mono);
+  text-transform:uppercase;color:var(--brass-300);
+}
+.ll-v{font-size:15px;font-weight:600;color:var(--fog-100)}
+
+.last-person{padding-top:30px;border-top:1px solid var(--brass-line);margin-bottom:32px}
+.lp-name{font-family:var(--serif);font-size:32px;font-weight:400;color:var(--cream)}
+.lp-role{
+  font-size:10px;letter-spacing:var(--ls-mono);text-transform:uppercase;
+  color:var(--fog-500);margin-top:9px;
+}
+.lp-brand{margin-top:20px;display:flex;align-items:center}
+.last-legal{font-size:11.5px;line-height:1.62;color:var(--fog-600);max-width:96ch}
+
+/* ============================================================
+   ЭКРАН: адаптив. Страницы ужимаются, но остаются страницами
+   ============================================================ */
+@media screen{
+  body{padding:28px 0}
+}
+@media screen and (max-width:1180px){
+  .page{width:auto;max-width:940px;min-height:0}
+  .pg-in,.cover-in{padding:56px 52px}
+  .cover-h{font-size:66px}
+  .s-h{font-size:42px}
+  .gap-v{font-size:44px}
+}
+@media screen and (max-width:780px){
+  body{padding:0}
+  .page{margin-bottom:0;border-radius:0}
+  .pg-in,.cover-in{padding:44px 26px}
+  .cover-h{font-size:44px}
+  .cover-l{font-size:16.5px}
+  .cover-foot{grid-template-columns:1fr;gap:20px}
+  .cf-item b{font-size:34px}
+  .s-h{font-size:31px}
+  .lede{font-size:16.5px}
+  .cols2{grid-template-columns:1fr;gap:30px}
+  .stat3{grid-template-columns:1fr}
+  .st b{font-size:38px}
+  .ch-row{grid-template-columns:105px 1fr 60px;gap:12px}
+  .ch-val{font-size:19px}
+  .ch-now .ch-val{font-size:22px}
+  .dyn-row{grid-template-columns:120px 1fr 54px;gap:12px}
+  .gap{grid-template-columns:1fr;gap:14px}
+  .gap-mid{padding:6px 0}
+  .gap-arrow{font-size:30px}
+  .gap-v{font-size:40px}
+  .sold-row{grid-template-columns:110px 1fr 62px;gap:12px}
+  .mini-h{font-size:23px}
+  .qlist li{padding-left:46px}
+  .qlist li::before{font-size:25px}
+  .q-h{font-size:20px}
+  .last-h{font-size:34px}
+  .last-links{grid-template-columns:1fr}
+}
+
+/* ============================================================
+   ПЕЧАТЬ: каждая секция — отдельный лист A4
+   ============================================================ */
+@media print{
+  @page{margin:0}
+  html,body{background:#fff;width:var(--pw);padding:0}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .page{
+    width:var(--pw);height:var(--ph);min-height:var(--ph);margin:0;
+    page-break-after:always;break-after:page;
+    page-break-inside:avoid;break-inside:avoid;
+  }
+  .page:last-of-type{page-break-after:auto;break-after:auto}
+  /* фиксируем десктопные сетки — A4 узкий, иначе сработает мобильный адаптив */
+  .cols2{grid-template-columns:1fr 1fr !important;gap:46px !important}
+  .stat3{grid-template-columns:repeat(3,1fr) !important}
+  .gap{grid-template-columns:1fr auto 1fr !important}
+  .cover-foot{grid-template-columns:repeat(3,1fr) !important}
+  .last-links{grid-template-columns:repeat(3,1fr) !important}
+  .ch-row{grid-template-columns:150px 1fr 78px !important}
+  .dyn-row{grid-template-columns:200px 1fr 70px !important}
+  .sold-row{grid-template-columns:150px 1fr 74px !important}
+}
+
+</style>
+<script src="lead-assets.js" defer></script>
+</head>
+<body>
+<!-- ========== 1. ОБЛОЖКА ========== -->
+<section class="page pg-cover">
+  <div class="cover-bg" data-bg="__IMGREF_L0__"></div>
+  <div class="cover-scrim"></div>
+  <div class="cover-in">
+    <div class="cover-top">
+      <span class="rmlogo-mark" aria-hidden="true"><i></i><i></i></span>
+      <span class="rmlogo-txt"><b>real</b><em>major</em><s>.life</s></span>
+    </div>
+
+    <div class="cover-mid">
+      <div class="cover-k">Разбор рынка · июль 2026</div>
+      <h1 class="cover-h">Батуми 2026:<br>что показывают<br><em>отчёты</em></h1>
+      <p class="cover-l">
+        Данные Galt&nbsp;&amp;&nbsp;Taggart — аналитического подразделения Банка Грузии.
+        Не буклеты застройщиков. Семь фактов, которые стоит знать до того,
+        как переводить деньги.
+      </p>
+    </div>
+
+    <div class="cover-foot">
+      <div class="cf-item"><b>7,1%</b><span>валовая доходность сегодня</span></div>
+      <div class="cf-item"><b>13 000</b><span>непроданных квартир</span></div>
+      <div class="cf-item"><b>−21,9%</b><span>вторичка к первичке</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 2. ЗАЧЕМ ЭТОТ РАЗБОР ========== -->
+<section class="page pg-light">
+  <div class="pg-in">
+    <div class="s-k">Зачем этот разбор</div>
+    <h2 class="s-h">Я продаю недвижимость в Батуми<br>и показываю вам плохие новости</h2>
+
+    <div class="lede">
+      Выглядит странно. Объясню.
+    </div>
+
+    <div class="cols2">
+      <div class="col">
+        <p>Рынок Батуми продают одинаково: «доходность 12–15% годовых», «рост 60%
+        к сдаче», «Батуми — новый Дубай». Иногда это правда для конкретного лота.
+        Как описание рынка — нет.</p>
+
+        <p>Проблема в том, что человек покупает по буклету, а живёт с реальными
+        цифрами. Через год он видит другую доходность, чем ожидал, и виноват
+        оказывается тот, кто продал.</p>
+      </div>
+      <div class="col">
+        <p>Мне это невыгодно. Я работаю на повторных обращениях и рекомендациях —
+        а они бывают только у тех, кто не обманул.</p>
+
+        <p>Поэтому здесь семь фактов из отчётов Galt&nbsp;&amp;&nbsp;Taggart. Часть
+        из них неприятная. Читайте до конца: в последнем разделе — что с этим
+        делать и на что смотреть при выборе объекта.</p>
+      </div>
+    </div>
+
+    <div class="src-note">
+      <b>Источник данных.</b> Galt&nbsp;&amp;&nbsp;Taggart — исследовательское
+      подразделение Bank of Georgia. Отчёт «Batumi Residential Real Estate:
+      2025 Review and 2026 Outlook» и квартальные обзоры за 1&nbsp;кв.&nbsp;2026.
+      Опрос охватывает 30+ активных проектов, около 40% первичного рынка Батуми.
+      Все цифры ниже — оттуда.
+    </div>
+  </div>
+</section>
+
+<!-- ========== 3. ФАКТ 1: ДОХОДНОСТЬ ========== -->
+<section class="page pg-dark">
+  <div class="pg-in">
+    <div class="s-k s-k-d">Факт первый</div>
+    <h2 class="s-h s-h-d">Доходность падает четвёртый год подряд</h2>
+
+    <div class="lede lede-d">
+      Это главная цифра, и её почти никогда не показывают в презентациях.
+      Валовая доходность аренды в Батуми снижается с 2022 года.
+    </div>
+
+    <div class="chart">
+      <div class="ch-row">
+        <div class="ch-lab">2022–23</div>
+        <div class="ch-bar"><span style="width:100%"></span></div>
+        <div class="ch-val">~10%</div>
+      </div>
+      <div class="ch-row">
+        <div class="ch-lab">2024</div>
+        <div class="ch-bar"><span style="width:88%"></span></div>
+        <div class="ch-val">8,8%</div>
+      </div>
+      <div class="ch-row">
+        <div class="ch-lab">2025</div>
+        <div class="ch-bar"><span style="width:74%"></span></div>
+        <div class="ch-val">7,4%</div>
+      </div>
+      <div class="ch-row ch-now">
+        <div class="ch-lab">1 кв. 2026</div>
+        <div class="ch-bar"><span style="width:71%"></span></div>
+        <div class="ch-val">7,1%</div>
+      </div>
+      <div class="ch-row ch-fc">
+        <div class="ch-lab">прогноз G&amp;T</div>
+        <div class="ch-bar ch-bar-fc"><span style="width:51%"></span></div>
+        <div class="ch-val">5,1%</div>
+      </div>
+      <div class="ch-row ch-fc">
+        <div class="ch-lab">консерв. сценарий</div>
+        <div class="ch-bar ch-bar-fc"><span style="width:34%"></span></div>
+        <div class="ch-val">3,4%</div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <div class="co-h">Что здесь важно понять</div>
+      <div class="co-t">
+        <b>7,1% — это валовая доходность, до расходов.</b> После комиссии управляющей
+        компании, обслуживания и налога остаётся меньше. При долгосрочной аренде
+        ориентировочно 6%, при краткосрочной через УК — около 4%. В периоды простоя
+        может выйти ноль.
+        <br><br>
+        При этом Батуми по-прежнему в числе городов с самой высокой доходностью
+        в регионе. Речь не о том, что рынок плохой, — а о том, что 12–15%
+        как ожидание от рынка не работает.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 4. ФАКТ 2: СТОК ========== -->
+<section class="page pg-light">
+  <div class="pg-in">
+    <div class="s-k">Факт второй</div>
+    <h2 class="s-h">13 000 квартир не проданы</h2>
+
+    <div class="lede">
+      Столько непроданного жилья накопилось у застройщиков к началу 2026 года.
+      За год объём вырос почти на 14%.
+    </div>
+
+    <div class="stat3">
+      <div class="st">
+        <b>13 000</b>
+        <span>непроданных квартир в опрошенных проектах</span>
+      </div>
+      <div class="st">
+        <b>+14%</b>
+        <span>рост непроданного стока за год</span>
+      </div>
+      <div class="st">
+        <b>40%</b>
+        <span>доля рынка, которую охватывает опрос — значит реальный сток больше</span>
+      </div>
+    </div>
+
+    <p class="p">Продажи в 2025 году выросли на 15% и достигли 17&nbsp;478 квартир —
+    рынок восстановился после провала 2024-го. Но спрос всё ещё <b>ниже бума
+    2022–23 годов</b>, а стройки продолжаются. Аналитики G&amp;T называют 2026-й
+    «годом проверки на усвоение» — сможет ли рынок переварить то, что уже построено.</p>
+
+    <div class="dyn">
+      <div class="dyn-h">Динамика внутри 1 квартала 2026</div>
+      <div class="dyn-row">
+        <div class="dyn-m">Сентябрь 2025 — пик</div>
+        <div class="dyn-b"><span style="width:100%"></span></div>
+        <div class="dyn-v">1 044</div>
+      </div>
+      <div class="dyn-row">
+        <div class="dyn-m">Январь 2026</div>
+        <div class="dyn-b"><span style="width:68%"></span></div>
+        <div class="dyn-v">705</div>
+      </div>
+      <div class="dyn-row">
+        <div class="dyn-m">Март 2026</div>
+        <div class="dyn-b"><span style="width:29%"></span></div>
+        <div class="dyn-v">306</div>
+      </div>
+      <div class="dyn-n">Квартир продано за месяц, опрошенные застройщики.
+      Часть падения — сезонность, но тренд внутри квартала нисходящий.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 5. ФАКТ 3: РАЗРЫВ ЦЕН ========== -->
+<section class="page pg-dark">
+  <div class="pg-in">
+    <div class="s-k s-k-d">Факт третий</div>
+    <h2 class="s-h s-h-d">Вторичка на 21,9% дешевле первички</h2>
+
+    <div class="lede lede-d">
+      Это самый неудобный факт для тех, кто планирует быстро перепродать.
+      Цифры за март 2026 года.
+    </div>
+
+    <div class="gap">
+      <div class="gap-side">
+        <div class="gap-k">Первичка · под ключ</div>
+        <div class="gap-v">$1 893</div>
+        <div class="gap-s">за м² · +8,7% за год</div>
+      </div>
+      <div class="gap-mid">
+        <div class="gap-arrow">−21,9%</div>
+        <div class="gap-arrow-s">разрыв</div>
+      </div>
+      <div class="gap-side gap-side-2">
+        <div class="gap-k">Вторичка</div>
+        <div class="gap-v">$1 479</div>
+        <div class="gap-s">за м² · +7,8% за год</div>
+      </div>
+    </div>
+
+    <div class="callout callout-d">
+      <div class="co-h">Что это значит на практике</div>
+      <div class="co-t">
+        Купив новостройку и решив продать её через год-два, вы выходите
+        <b>на вторичный рынок</b> — а там цены на пятую часть ниже. Рост стоимости
+        на этапе стройки должен сначала перекрыть этот разрыв, и только потом
+        начинается ваша прибыль.
+        <br><br>
+        Именно поэтому короткий горизонт в Батуми рискован. Стратегия «куплю,
+        через год перепродам дороже» упирается в эти 22%.
+      </div>
+    </div>
+
+    <p class="p p-d">Прогноз G&amp;T на 2026 год: рост цен на первичке замедлится
+    до <b>4–6%</b> против 9,4% в 2025-м. Разрыв между первичкой и вторичкой,
+    по их оценке, дальше расширяться не будет.</p>
+  </div>
+</section>
+
+<!-- ========== 6. ФАКТ 4-5: АРЕНДА И СРОКИ ========== -->
+<section class="page pg-light">
+  <div class="pg-in">
+    <div class="s-k">Факты четвёртый и пятый</div>
+    <h2 class="s-h">Аренда просела, а сроки сдачи<br>влияют на распродажу</h2>
+
+    <div class="cols2">
+      <div class="col">
+        <div class="mini-k">Факт четвёртый</div>
+        <div class="mini-h">Ставка аренды упала на 7,3%</div>
+        <p class="p">Средняя ставка за сутки в Батуми — <b>$35,6</b> в 2025 году.
+        В первом квартале 2026-го она снизилась на 7,3% год к году.</p>
+        <p class="p">Рынок аренды почти полностью зависит от летнего сезона.
+        Расчёты, где загрузка стоит 240 дней в году, — это оптимистичный сценарий
+        для конкретных брендированных объектов, а не средняя по городу.</p>
+        <div class="mini-box">
+          Сопоставьте: если в презентации стоит ставка $120–130 в сутки,
+          спросите, откуда она и чем отличается от средних $35,6.
+          Для резиденций под управлением отельного оператора премия объяснима —
+          но она должна быть объяснена.
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="mini-k">Факт пятый</div>
+        <div class="mini-h">Чем дальше сдача, тем хуже распродан объект</div>
+        <div class="sold">
+          <div class="sold-row">
+            <div class="sold-l">Сдача в 2026</div>
+            <div class="sold-b"><span style="width:71%"></span></div>
+            <div class="sold-v">71%</div>
+          </div>
+          <div class="sold-row">
+            <div class="sold-l">Сдача 2027–2029</div>
+            <div class="sold-b"><span style="width:55%"></span></div>
+            <div class="sold-v">53–56%</div>
+          </div>
+        </div>
+        <p class="p">Доля проданных квартир в проекте. Логика простая: чем дальше
+        срок, тем меньше людей готовы ждать.</p>
+        <p class="p">Для вас это <b>рабочий индикатор</b>. Если у объекта со сдачей
+        через три года продано меньше половины — застройщику дольше собирать деньги,
+        а вам ждать соседей, которые заселятся и создадут спрос на аренду.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 7. ФАКТ 6-7: КТО ПОКУПАЕТ ========== -->
+<section class="page pg-dark pg-buyers">
+  <div class="buy-bg" data-bg="__IMGREF_L1__"></div>
+  <div class="buy-scrim"></div>
+  <div class="pg-in pg-in-rel">
+    <div class="s-k s-k-d">Факты шестой и седьмой</div>
+    <h2 class="s-h s-h-d">Хорошие новости тоже есть</h2>
+
+    <div class="cols2">
+      <div class="col">
+        <div class="mini-k mini-k-d">Факт шестой</div>
+        <div class="mini-h mini-h-d">Рынок вырос, а не сжался</div>
+        <p class="p p-d">2025 год: <b>17 478 сделок</b> (+15% к 2024), объём рынка
+        <b>$1,3 млрд</b> (+23,8%). Вторичный рынок превысил уровни 2022–23 годов.</p>
+        <p class="p p-d">То есть спрос есть, и он растёт. Проблема не в отсутствии
+        покупателей, а в том, что предложение растёт быстрее.</p>
+      </div>
+      <div class="col">
+        <div class="mini-k mini-k-d">Факт седьмой</div>
+        <div class="mini-h mini-h-d">Батуми всё ещё в лидерах по доходности</div>
+        <p class="p p-d">Даже упавшие 7,1% — <b>одна из самых высоких доходностей
+        среди сопоставимых городов</b> региона. Для сравнения: депозит в банке ЕС
+        даёт 2–3%.</p>
+        <p class="p p-d">Плюс налоговый режим, которого нет в Европе: 5% на доход
+        от аренды, 0% на прирост капитала после двух лет владения, 0% при покупке.</p>
+      </div>
+    </div>
+
+    <div class="callout callout-d">
+      <div class="co-h">Вывод, к которому ведут все семь фактов</div>
+      <div class="co-t">
+        Батуми не перестал быть рабочим рынком. Но он перестал быть рынком,
+        где <b>любая</b> квартира приносит доход просто потому, что она в Батуми.
+        Раньше рост тянул вверх всё подряд. Теперь разница между удачным
+        и неудачным объектом стала решающей.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 8. ЧТО ДЕЛАТЬ ========== -->
+<section class="page pg-cream">
+  <div class="pg-in">
+    <div class="s-k">Что с этим делать</div>
+    <h2 class="s-h">Пять вопросов, которые<br>отсекают плохой объект</h2>
+
+    <div class="lede">
+      Это те вопросы, которые я задаю сам, прежде чем показать объект клиенту.
+      Задайте их любому, кто продаёт вам недвижимость в Батуми.
+    </div>
+
+    <ol class="qlist">
+      <li>
+        <div class="q-h">Есть ли управляющая компания — и какая именно?</div>
+        <div class="q-t">Без неё вы сами ищете арендаторов, встречаете гостей
+        и чините сантехнику из другой страны. Спросите название компании,
+        срок работы на рынке и размер комиссии. Если ответ «поможем найти» —
+        это не управляющая компания.</div>
+      </li>
+      <li>
+        <div class="q-h">Откуда взята ставка аренды в расчёте?</div>
+        <div class="q-t">Средняя по Батуми — $35,6 в сутки. Если в расчёте стоит
+        $120, должно быть объяснение: бренд отельного оператора, локация в первой
+        линии, класс объекта. Просите показать, на чём основана цифра.</div>
+      </li>
+      <li>
+        <div class="q-h">Какой процент квартир в проекте уже продан?</div>
+        <div class="q-t">Для объектов со сдачей через 2–3 года норма — 53–56%.
+        Если существенно меньше, это вопрос: почему не берут. Если больше —
+        хороший знак.</div>
+      </li>
+      <li>
+        <div class="q-h">Кто финансирует стройку?</div>
+        <div class="q-t">Если стройка идёт на деньги покупателей, любая просадка
+        продаж останавливает объект. Банковское финансирование означает, что банк
+        проверил проект до выдачи денег и контролирует ход работ.</div>
+      </li>
+      <li>
+        <div class="q-h">Рост «60%» — от какой цены считается?</div>
+        <div class="q-t">Обычно от старта продаж. Но вы входите по сегодняшней цене,
+        и часть роста уже произошла. Просите пересчитать прирост от <b>текущей</b>
+        цены — цифра будет заметно скромнее.</div>
+      </li>
+    </ol>
+
+    <div class="hz">
+      <div class="hz-h">И главное — горизонт</div>
+      <div class="hz-t">
+        При разрыве первички и вторички в 22% и падающей доходности короткий
+        горизонт не работает. Реалистичный срок для Батуми — <b>от пяти лет</b>:
+        дождаться сдачи, отработать аренду, продавать после двух лет владения,
+        когда налог на прирост капитала обнуляется.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 9. КОНТАКТ ========== -->
+<section class="page pg-last">
+  <div class="last-bg" data-bg="__IMGREF_L2__"></div>
+  <div class="last-scrim"></div>
+  <div class="pg-in pg-in-rel">
+    <div class="s-k s-k-d">Дальше</div>
+    <h2 class="last-h">Если после этих цифр<br>интерес не пропал</h2>
+
+    <p class="last-l">
+      Значит вы считаете, а не мечтаете, — с такими людьми и стоит работать.
+      Я подбираю объекты в Батуми по критериям выше: только с управляющей компанией,
+      только с банковским финансированием, с расчётом от текущей цены.
+    </p>
+
+    <div class="last-links">
+      <a class="ll ll-main" href="https://artemfilatov579-rgb.github.io/onedev-batumi-presentation/" target="_blank" rel="noopener noreferrer">
+        <span class="ll-k">Презентация объектов</span>
+        <span class="ll-v">5 комплексов · калькулятор доходности</span>
+      </a>
+      <a class="ll" href="https://wa.me/380995404634?text=%D0%9F%D1%80%D0%BE%D1%87%D0%B8%D1%82%D0%B0%D0%BB%20%D1%80%D0%B0%D0%B7%D0%B1%D0%BE%D1%80%20%D1%80%D1%8B%D0%BD%D0%BA%D0%B0%20%D0%91%D0%B0%D1%82%D1%83%D0%BC%D0%B8.%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BE%D0%B1%D1%81%D1%83%D0%B4%D0%B8%D1%82%D1%8C%20%D0%BF%D0%BE%D0%B4%D0%B1%D0%BE%D1%80%D0%BA%D1%83." target="_blank" rel="noopener noreferrer">
+        <span class="ll-k">WhatsApp</span>
+        <span class="ll-v">+380 99 540 46 34</span>
+      </a>
+      <a class="ll" href="https://t.me/Burlaka_Tymofii" target="_blank" rel="noopener noreferrer">
+        <span class="ll-k">Telegram</span>
+        <span class="ll-v">@Burlaka_Tymofii</span>
+      </a>
+    </div>
+
+    <div class="last-person">
+      <div class="lp-name">Тимофей Бурлака</div>
+      <div class="lp-role">Инвестиции в курортную недвижимость · Батуми</div>
+      <div class="lp-brand">
+        <span class="rmlogo-mark" aria-hidden="true"><i></i><i></i></span>
+        <span class="rmlogo-txt"><b>real</b><em>major</em><s>.life</s></span>
+      </div>
+    </div>
+
+    <div class="last-legal">
+      Данные: Galt&nbsp;&amp;&nbsp;Taggart (исследовательское подразделение Bank of Georgia),
+      отчёт «Batumi Residential Real Estate: 2025 Review and 2026 Outlook» и обзоры
+      за 1&nbsp;кв.&nbsp;2026. Оценка чистой доходности 2–3% — International Investment.
+      Прогнозы носят вероятностный характер и не являются гарантией. Материал
+      информационный, не является инвестиционной рекомендацией или публичной офертой.
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
