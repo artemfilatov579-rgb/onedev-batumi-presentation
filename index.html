@@ -563,7 +563,70 @@ a{color:inherit}
 .cx-disc{font-size:11.5px;color:var(--fog-500);line-height:1.55}
 
 /* static print/no-JS table */
-.cx-print{display:none}
+/* сводная таблица — видна и на экране, и в PDF */
+.cx-print{display:block;margin-top:clamp(34px,4.5vw,54px)}
+.cxp-title{
+  font-family:var(--mono);font-size:10px;font-weight:500;
+  letter-spacing:var(--ls-mono);text-transform:uppercase;
+  color:var(--brass-400);margin-bottom:20px;
+  display:flex;align-items:center;gap:12px;
+}
+.cxp-title::after{content:'';flex:1;max-width:90px;height:1px;background:var(--brass-line)}
+.cxp-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;position:relative}
+/* мягкая тень справа — подсказка, что таблица прокручивается */
+.cxp-scroll-hint{
+  display:none;font-family:var(--mono);font-size:9px;letter-spacing:var(--ls-mono);
+  text-transform:uppercase;color:var(--fog-600);margin-bottom:10px;
+}
+@media(max-width:860px){
+  .cxp-scroll-hint{display:block}
+  .cxp-wrap{
+    mask-image:linear-gradient(90deg,#000 88%,transparent 100%);
+    -webkit-mask-image:linear-gradient(90deg,#000 88%,transparent 100%);
+  }
+}
+.cxp-table{width:100%;border-collapse:collapse;font-size:14px;min-width:760px}
+.cxp-table th{
+  text-align:left;font-family:var(--mono);font-size:9.5px;font-weight:500;
+  letter-spacing:var(--ls-mono);text-transform:uppercase;color:var(--fog-500);
+  padding:13px 14px;border-bottom:1px solid var(--brass-line);
+  background:rgba(255,255,255,.03);vertical-align:bottom;line-height:1.4;
+}
+.cxp-sub{display:block;font-size:8.5px;color:var(--fog-600);letter-spacing:.14em;margin-top:3px}
+.cxp-table th:not(:first-child),.cxp-table td:not(:first-child){text-align:right}
+.cxp-table td{
+  padding:15px 14px;border-bottom:1px solid var(--line-1);
+  color:var(--fog-300);font-variant-numeric:tabular-nums;
+}
+.cxp-table tbody tr{transition:var(--dur) var(--ease)}
+.cxp-table tbody tr:hover{background:rgba(168,85,106,.06)}
+.cxp-table td:first-child{font-weight:600;color:var(--fog-100)}
+.cxp-tot{
+  font-family:var(--serif);font-size:20px;font-weight:500;
+  color:var(--brass-300) !important;
+}
+.cxp-row-na td{color:var(--fog-600)}
+.cxp-row-na .cxp-tot{color:var(--fog-600) !important;font-size:16px}
+
+.cxp-legend{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.4vw,28px);
+  margin-top:24px;padding-top:22px;border-top:1px solid var(--line-1);
+}
+.cxp-leg-h{
+  font-family:var(--mono);font-size:9.5px;font-weight:500;
+  letter-spacing:var(--ls-mono);text-transform:uppercase;
+  color:var(--brass-400);margin-bottom:8px;
+}
+.cxp-leg-t{font-size:12.5px;color:var(--fog-500);line-height:1.6}
+.cxp-leg-t strong{color:var(--fog-300);font-weight:600}
+.cxp-note{
+  margin-top:20px;padding-top:16px;border-top:1px solid var(--line-1);
+  font-size:12px;color:var(--fog-600);line-height:1.62;
+}
+.cxp-note-print{display:none}
+@media(max-width:860px){
+  .cxp-legend{grid-template-columns:1fr;gap:16px}
+}
 
 @media(max-width:980px){
   .cx{grid-template-columns:1fr}
@@ -1228,6 +1291,26 @@ a{color:inherit}
   /* calculator: interactive UI is meaningless on paper — swap in the table */
   .cx{display:none !important}
   .cx-print{display:block}
+  .cxp-table{min-width:0;font-size:12px}
+  .cxp-wrap{overflow:visible;mask-image:none;-webkit-mask-image:none}
+  .cxp-scroll-hint{display:none !important}
+  /* секция калькулятора в печати ТЁМНАЯ — таблица остаётся светлой по тексту */
+  .cxp-table th{color:var(--fog-500);background:rgba(255,255,255,.05);border-bottom-color:var(--brass-line)}
+  .cxp-sub{color:var(--fog-600)}
+  .cxp-table td{color:var(--fog-100);border-bottom-color:var(--line-2)}
+  .cxp-table td:nth-child(5),.cxp-table td:nth-child(6),.cxp-table td:nth-child(7){color:var(--fog-100)}
+  .cxp-table td:first-child{color:var(--fog-100)}
+  .cxp-tot{color:var(--brass-300) !important;font-size:15px}
+  .cxp-row-na td,.cxp-row-na .cxp-tot{color:var(--fog-600) !important}
+  .cxp-table tbody tr:hover{background:none}
+  .cxp-title{color:var(--brass-400)}
+  .cxp-title::after{background:var(--brass-line)}
+  .cxp-leg-h{color:var(--brass-400)}
+  .cxp-leg-t{color:var(--fog-500);font-size:10px}
+  .cxp-leg-t strong{color:var(--fog-300)}
+  .cxp-legend{border-top-color:var(--line-1)}
+  .cxp-note{color:var(--fog-600);border-top-color:var(--line-1);font-size:9.5px}
+  .cxp-note-print{display:inline}
   .cxp-title{
     font-size:11px;font-weight:650;letter-spacing:.13em;text-transform:uppercase;
     color:var(--wine-400);margin-bottom:18px;
@@ -1601,21 +1684,78 @@ a{color:inherit}
 
     <!-- static fallback for PDF / no-JS -->
     <div class="cx-print">
-      <div class="cxp-title">Расчёты застройщика по каждому объекту</div>
+      <div class="cxp-title">Сводка по пяти объектам</div>
+      <div class="cxp-scroll-hint">Таблица прокручивается вбок →</div>
+      <div class="cxp-wrap">
       <table class="cxp-table">
         <thead>
-          <tr><th>Объект</th><th>Площадь</th><th>Стоимость</th><th>Аренда</th><th>Чистыми в год</th><th>Доходность</th><th>Окупаемость</th></tr>
+          <tr>
+            <th>Объект</th><th>Площадь</th><th>Стоимость</th>
+            <th>Ключи<br><span class="cxp-sub">с запасом</span></th>
+            <th>Чистыми<br>в год</th>
+            <th>Аренда<br><span class="cxp-sub">% годовых</span></th>
+            <th>Рост<br><span class="cxp-sub">к сдаче</span></th>
+            <th>Совокупно<br><span class="cxp-sub">% в год</span></th>
+          </tr>
         </thead>
         <tbody>
-          <tr><td>Ramada by Wyndham</td><td>35 м²</td><td>$105 000</td><td>краткосрочная</td><td>$15 860</td><td>15,1%</td><td>6,6 лет</td></tr>
-          <tr><td>HOME Гонио</td><td>146,7 м²</td><td>$302 000</td><td>краткосрочная</td><td>$30 507</td><td>10,1%</td><td>9,9 лет</td></tr>
-          <tr><td>Stay &amp; Rent</td><td>47,9 м²</td><td>$81 560</td><td>долгосрочная</td><td>$7 404</td><td>9,1%</td><td>11,0 лет</td></tr>
-          <tr><td>ONE</td><td>53,4 м²</td><td>$110 760</td><td>долгосрочная</td><td>$9 619</td><td>8,7%</td><td>11,5 лет</td></tr>
+          <tr>
+            <td>ONE</td><td>53,4 м²</td><td>$110 760</td>
+            <td>Q2 2028</td><td>$9 619</td><td>8,7%</td><td>+80%</td>
+            <td class="cxp-tot">≈21%</td>
+          </tr>
+          <tr>
+            <td>Stay &amp; Rent</td><td>47,9 м²</td><td>$81 560</td>
+            <td>Q4 2027</td><td>$7 404</td><td>9,1%</td><td>+41%</td>
+            <td class="cxp-tot">≈15%</td>
+          </tr>
+          <tr>
+            <td>HOME Гонио</td><td>146,7 м²</td><td>$302 000</td>
+            <td>Q2 2027</td><td>$30 507</td><td>10,1%</td><td>+30%</td>
+            <td class="cxp-tot">≈14%</td>
+          </tr>
+          <tr>
+            <td>Ramada by Wyndham</td><td>35 м²</td><td>$105 000</td>
+            <td>Q2 2030</td><td>$15 860</td><td>15,1%</td><td>+40%</td>
+            <td class="cxp-tot">≈11%</td>
+          </tr>
+          <tr class="cxp-row-na">
+            <td>SportCity</td><td>от 30,5 м²</td><td>от $46 637</td>
+            <td>Q2 2031</td><td>—</td><td>—</td><td>—</td>
+            <td class="cxp-tot">—</td>
+          </tr>
         </tbody>
       </table>
+      </div>
+
+      <div class="cxp-legend">
+        <div class="cxp-leg">
+          <div class="cxp-leg-h">Ключи «с запасом»</div>
+          <div class="cxp-leg-t">К официальному сроку застройщика добавлено полгода —
+          типичный сдвиг для строящихся объектов. Официальные даты: ONE Q4&nbsp;2027,
+          Stay&nbsp;&amp;&nbsp;Rent Q2&nbsp;2027, HOME Q4&nbsp;2026, Ramada Q4&nbsp;2029,
+          SportCity Q4&nbsp;2030.</div>
+        </div>
+        <div class="cxp-leg">
+          <div class="cxp-leg-h">Рост считается от цены сегодня</div>
+          <div class="cxp-leg-t">Застройщик публикует рост от старта продаж: у ONE это +135%,
+          у Stay&nbsp;&amp;&nbsp;Rent +75%. Но часть роста уже произошла. В таблице —
+          прирост от <strong>текущей</strong> цены входа, по реальным кейсам лотов.</div>
+        </div>
+        <div class="cxp-leg">
+          <div class="cxp-leg-h">Как считается «совокупно»</div>
+          <div class="cxp-leg-t">Горизонт 5 лет. Разовый прирост капитала к сдаче плюс
+          арендный доход за годы после ввода, делённые на 5. До сдачи аренды нет —
+          поэтому у объектов с дальним сроком совокупный процент ниже.</div>
+        </div>
+      </div>
       <div class="cxp-note">
-        Интерактивный калькулятор с выбором объекта, площади и типа аренды доступен
-        в онлайн-версии презентации. Расходы, налог 5% и ставки аренды — по данным onedev.ge.
+        Цены, ставки аренды и расходы — по данным onedev.ge. Сроки сдачи и совокупная
+        доходность — расчёт с запасом, не гарантия застройщика. Налог на прирост
+        капитала в Грузии 0% после двух лет владения, поэтому на горизонте пяти лет
+        он не уменьшает результат.
+        <span class="cxp-note-print">Интерактивный калькулятор с выбором объекта,
+        площади и типа аренды доступен в онлайн-версии презентации.</span>
       </div>
     </div>
   </div>
