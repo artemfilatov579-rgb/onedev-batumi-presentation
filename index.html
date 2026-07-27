@@ -976,6 +976,70 @@ a{color:inherit}
   font-size:13.2px;color:var(--txt-2);line-height:1.6;
 }
 
+
+/* ============ ДОРОЖНАЯ КАРТА (порядок работы) ============ */
+.road{list-style:none;counter-reset:none;margin:0 0 clamp(44px,6vw,72px);padding:0;position:relative}
+/* вертикальная латунная нить, соединяющая шаги */
+.road::before{
+  content:'';position:absolute;left:23px;top:14px;bottom:24px;width:1px;
+  background:linear-gradient(180deg,var(--brass-500),rgba(184,151,90,.18));
+}
+.road-step{
+  display:grid;grid-template-columns:48px 1fr;gap:clamp(18px,2.4vw,30px);
+  padding:0 0 clamp(26px,3.4vw,40px);position:relative;
+}
+.road-step:last-child{padding-bottom:0}
+.road-n{
+  font-family:var(--serif);font-size:17px;font-weight:500;
+  color:var(--brass-700);background:var(--cream);
+  width:47px;height:47px;border:1px solid var(--brass-line);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  position:relative;z-index:1;
+}
+.road-step-hl .road-n{
+  background:var(--wine-600);color:var(--brass-300);
+  border-color:var(--wine-600);
+}
+.road-h{
+  font-family:var(--serif);font-size:clamp(21px,2.4vw,28px);font-weight:400;
+  color:var(--deep-ink);margin:9px 0 10px;line-height:1.15;letter-spacing:0;
+}
+.road-t{font-size:15px;color:var(--body-ink);line-height:1.68;max-width:62ch}
+.road-t strong{color:var(--deep-ink);font-weight:600}
+.road-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.road-tags span{
+  font-family:var(--mono);font-size:9.5px;font-weight:500;
+  letter-spacing:var(--ls-mono);text-transform:uppercase;
+  color:var(--brass-700);border:1px solid rgba(110,87,41,.28);
+  padding:6px 11px;border-radius:var(--r-chip);
+}
+/* шаг с инвест-туром выделен пергаментной карточкой */
+.road-step-hl .road-body{
+  background:rgba(255,255,255,.7);border:1px solid var(--brass-line);
+  border-left:2px solid var(--wine-600);
+  padding:20px 24px;margin-top:-4px;border-radius:var(--r-card);
+}
+.road-step-hl .road-h{margin-top:0}
+.road-step-hl .road-tags span{
+  color:var(--wine-ink);border-color:rgba(74,20,32,.3);
+}
+
+/* критерии отбора объектов */
+.crit{display:flex;flex-direction:column;gap:20px;margin-bottom:6px}
+.crit-i{padding-left:18px;border-left:1px solid var(--brass-line)}
+.crit-h{font-size:15px;font-weight:600;color:var(--deep-ink);margin-bottom:6px;line-height:1.35}
+.crit-t{font-size:14px;color:var(--body-ink);line-height:1.62}
+
+.how-grid-terms{padding-top:clamp(30px,4vw,44px);border-top:1px solid var(--brass-line)}
+.how-grid-terms .how-h{margin-bottom:24px}
+
+@media(max-width:640px){
+  .road::before{left:17px}
+  .road-step{grid-template-columns:36px 1fr;gap:14px}
+  .road-n{width:35px;height:35px;font-size:14px}
+  .road-step-hl .road-body{padding:16px 16px}
+}
+
 /* ============ CTA ============ */
 .sec-cta{position:relative;color:var(--txt-light);overflow:hidden;padding:clamp(70px,10vw,130px) 0}
 .cta-bg{position:absolute;inset:0;background-size:cover;background-position:center}
@@ -1229,6 +1293,7 @@ a{color:inherit}
       <nav class="topnav">
         <a href="#ramada">Ramada</a>
         <a href="#stayrent">Stay &amp; Rent</a>
+        <a href="#one">ONE</a>
         <a href="#projects">Объекты</a>
         <a href="#calculator">Калькулятор</a>
         <a href="#developer">Застройщик</a>
@@ -1394,9 +1459,9 @@ a{color:inherit}
     <figcaption>Гонио · горы у воды</figcaption>
   </figure>
   <figure>
-    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="__IMGREF_I3__" alt="Пляж Батуми в высокий сезон">
+    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="__IMGREF_I3__" alt="ONE — прихожая с гардеробной">
     <span class="band-tint"></span>
-    <figcaption>Высокий сезон · 2,6 млн туристов</figcaption>
+    <figcaption>Отделка «под ключ» · ONE</figcaption>
   </figure>
 </div>
 
@@ -1784,6 +1849,65 @@ a{color:inherit}
   </div>
 </section></div>
 
+<!-- ================= ONE: ФОТО НА ВСЮ СТРАНИЦУ ================= -->
+<div class="page"><section class="shot shot-one" id="one">
+  <div class="shot-bg" data-bg="__IMGREF_I18__"></div>
+  <div class="shot-scrim"></div>
+  <div class="shot-credit">ONE · рендер застройщика</div>
+  <div class="shot-inner">
+    <div class="shot-body">
+      <div class="shot-kicker">ONE · Тбел Абусеридзе</div>
+      <h2 class="shot-title">33 этажа, из которых<br>девять — пентхаусные</h2>
+      <p class="shot-lede">
+        Флагман застройщика и обладатель <strong>European Property Awards 2025–2026</strong>.
+        Тихий центр в пешей доступности от моря: 483 квартиры, 26 планировок —
+        от студии 31,6&nbsp;м² до трёх спален. Метр вырос с $1&nbsp;090 на старте
+        продаж до $2&nbsp;500 к сдаче.
+      </p>
+      <div class="shot-stats">
+        <div><div class="shot-stat-n">33</div><div class="shot-stat-t">этажа</div></div>
+        <div><div class="shot-stat-n">483</div><div class="shot-stat-t">квартиры</div></div>
+        <div><div class="shot-stat-n">26</div><div class="shot-stat-t">планировок</div></div>
+        <div><div class="shot-stat-n">Q4 2027</div><div class="shot-stat-t">сдача</div></div>
+        <div><div class="shot-stat-n">6–8%</div><div class="shot-stat-t">годовых</div></div>
+      </div>
+    </div>
+  </div>
+</section></div>
+
+<!-- ================= ONE: ИНФРАСТРУКТУРА И ИНТЕРЬЕРЫ ================= -->
+<div class="page"><section class="shot shot-one-in shot-gallery">
+  <div class="shot-bg" data-bg="__IMGREF_I19__"></div>
+  <div class="shot-scrim"></div>
+  <div class="shot-credit">Батуми на закате · вид в сторону моря</div>
+  <div class="shot-inner">
+    <div class="shot-body">
+      <div class="shot-kicker">Что внутри</div>
+      <h2 class="shot-title">Бассейн на крыше<br>и терраса над городом</h2>
+      <p class="shot-lede">
+        Подогреваемый бассейн, скай-бар и ресторан на верхних этажах, крытый бассейн
+        для круглогодичных заплывов, фитнес и консьерж. Закрытая территория
+        с охраной 24/7.
+      </p>
+    </div>
+
+    <div class="shot-gal shot-gal-3">
+      <figure>
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="__IMGREF_I20__" alt="ONE — бассейн и терраса на крыше с видом на море">
+        <figcaption>Бассейн на крыше · вид на море</figcaption>
+      </figure>
+      <figure>
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="__IMGREF_I21__" alt="ONE — крытый бассейн">
+        <figcaption>Крытый бассейн</figcaption>
+      </figure>
+      <figure>
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="__IMGREF_I22__" alt="ONE — гостиная в квартире">
+        <figcaption>Гостиная</figcaption>
+      </figure>
+    </div>
+  </div>
+</section></div>
+
 <!-- ================= ОБЪЕКТЫ ================= -->
 <div class="page page-proj page-proj-first"><section class="sec sec-projects" id="projects"><div class="wrap"><div class="sec-head">
       <div class="sec-kicker">Объекты</div>
@@ -1797,11 +1921,11 @@ a{color:inherit}
     <!-- RAMADA -->
     <article class="proj">
       <div class="proj-media">
-        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="__IMGREF_I18__" alt="Ramada Residences by Wyndham Batumi — фасад со стороны Аллеи Героев">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="__IMGREF_I23__" alt="Ramada Residences by Wyndham Batumi — фасад со стороны Аллеи Героев">
         <div class="proj-flag proj-flag-gold">Максимальная доходность</div>
       </div><article class="proj">
       <div class="proj-media">
-        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="__IMGREF_I19__" alt="Ramada Residences by Wyndham Batumi — фасад со стороны Аллеи Героев">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="__IMGREF_I24__" alt="Ramada Residences by Wyndham Batumi — фасад со стороны Аллеи Героев">
         <div class="proj-flag proj-flag-gold">Максимальная доходность</div>
       </div>
       <div class="proj-body">
@@ -1837,7 +1961,7 @@ a{color:inherit}
     </article></div></section></div>
 <div class="page page-proj"><section class="sec sec-projects"><div class="wrap"><article class="proj proj-rev">
       <div class="proj-media">
-        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="__IMGREF_I20__" alt="ONE — жилой комплекс бизнес-класса в центре Батуми">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="__IMGREF_I25__" alt="ONE — башня бизнес-класса в центре Батуми">
         <div class="proj-flag">European Property Awards 25–26</div>
       </div>
       <div class="proj-body">
@@ -1873,7 +1997,7 @@ a{color:inherit}
     </article></div></section></div>
 <div class="page page-proj"><section class="sec sec-projects"><div class="wrap"><article class="proj">
       <div class="proj-media">
-        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="__IMGREF_I21__" alt="Stay &amp; Rent — фасад комплекса на Новом бульваре">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="__IMGREF_I26__" alt="Stay &amp; Rent — фасад комплекса на Новом бульваре">
         <div class="proj-flag proj-flag-gold">Лучший рост стоимости</div>
       </div>
       <div class="proj-body">
@@ -1910,7 +2034,7 @@ a{color:inherit}
     </article></div></section></div>
 <div class="page page-proj"><section class="sec sec-projects"><div class="wrap"><article class="proj proj-rev">
       <div class="proj-media">
-        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="__IMGREF_I22__" alt="HOME — таунхаусы в Гонио">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="__IMGREF_I27__" alt="HOME — таунхаусы в Гонио">
         <div class="proj-flag">Сдача этой зимой</div>
       </div>
       <div class="proj-body">
@@ -1946,7 +2070,7 @@ a{color:inherit}
     </article></div></section></div>
 <div class="page page-proj"><section class="sec sec-projects"><div class="wrap"><article class="proj">
       <div class="proj-media">
-        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="__IMGREF_I23__" alt="SportCity — Новый бульвар, Батуми">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="__IMGREF_I28__" alt="SportCity — Новый бульвар, Батуми">
         <div class="proj-flag">Старт продаж · лучшие цены</div>
       </div>
       <div class="proj-body">
@@ -2059,12 +2183,88 @@ a{color:inherit}
 <div class="page"><section class="sec sec-how" id="how">
   <div class="wrap">
     <div class="sec-head">
-      <div class="sec-kicker">Условия и порядок</div>
-      <h2 class="sec-title">Как проходит покупка</h2>
+      <div class="sec-kicker">Порядок работы</div>
+      <h2 class="sec-title">Пять шагов до вашей<br>первой курортной квартиры</h2>
+      <p class="sec-lede">
+        Мы не продаём метры со скидкой. Мы подбираем курортную недвижимость, которая
+        одновременно растёт в цене и приносит арендный доход — и работаем только
+        с объектами, где есть профессиональная управляющая компания.
+      </p>
     </div>
 
-    <div class="how-grid">
+    <ol class="road">
+      <li class="road-step">
+        <div class="road-n">01</div>
+        <div class="road-body">
+          <h3 class="road-h">Разбираем задачу</h3>
+          <p class="road-t">
+            Бюджет, горизонт вложений и цель: денежный поток с аренды, прирост капитала
+            или ВНЖ для семьи. От ответа зависит и страна, и объект — под доход в сезон
+            и под долгую аренду подходят разные проекты.
+          </p>
+          <div class="road-tags"><span>Бюджет</span><span>Цель</span><span>Срок</span></div>
+        </div>
+      </li>
+
+      <li class="road-step">
+        <div class="road-n">02</div>
+        <div class="road-body">
+          <h3 class="road-h">Присылаю подборку под ваш бюджет</h3>
+          <p class="road-t">
+            Конкретные лоты с планировками, ценой, графиком платежей и расчётом
+            окупаемости по каждому. Показываю полный пакет документов застройщика:
+            разрешения, техпаспорта, выписки из реестра, подтверждение банковского
+            финансирования.
+          </p>
+          <div class="road-tags"><span>Расчёт доходности</span><span>Документы</span></div>
+        </div>
+      </li>
+
+      <li class="road-step">
+        <div class="road-n">03</div>
+        <div class="road-body">
+          <h3 class="road-h">Созвон: разбираем риски без прикрас</h3>
+          <p class="road-t">
+            Час в Zoom. Что будет, если объект сдадут позже. Как считается доходность
+            и что в неё не входит. Почему вторичка дешевле первички и когда выгоднее
+            выходить. Как устроено владение и налоги для нерезидента.
+          </p>
+          <div class="road-tags"><span>Zoom · 1 час</span><span>Ответы на возражения</span></div>
+        </div>
+      </li>
+
+      <li class="road-step road-step-hl">
+        <div class="road-n">04</div>
+        <div class="road-body">
+          <h3 class="road-h">Инвест-тур: три дня в Батуми</h3>
+          <p class="road-t">
+            Главный шаг. Вы смотрите объекты вживую, а не на рендерах: стройплощадки,
+            готовые квартиры, районы, инфраструктуру. Знакомитесь с городом и понимаете,
+            кому вы будете сдавать. Встречи с застройщиком и управляющей компанией.
+            Туры проводятся <strong>раз в месяц</strong> по назначенной дате.
+          </p>
+          <div class="road-tags"><span>3 дня</span><span>Раз в месяц</span><span>Объекты вживую</span></div>
+        </div>
+      </li>
+
+      <li class="road-step">
+        <div class="road-n">05</div>
+        <div class="road-body">
+          <h3 class="road-h">Сделка и передача в управление</h3>
+          <p class="road-t">
+            Бронирование фиксирует цену и конкретную квартиру. Дальше договор
+            купли-продажи, оплата по графику и регистрация права — один день
+            в Министерстве юстиции. Подключаем управляющую компанию, и квартира
+            начинает работать.
+          </p>
+          <div class="road-tags"><span>Регистрация 1 день</span><span>УК подключена</span></div>
+        </div>
+      </li>
+    </ol>
+
+    <div class="how-grid how-grid-terms">
       <div class="how-terms">
+        <h3 class="how-h">Условия покупки</h3>
         <div class="ht"><div class="ht-n">15%</div><div class="ht-b"><div class="ht-h">Первый взнос</div><div class="ht-t">Остальное — рассрочка. Есть вариант резервирования с депозитом.</div></div></div>
         <div class="ht"><div class="ht-n">0%</div><div class="ht-b"><div class="ht-h">Рассрочка до 48 месяцев</div><div class="ht-t">70% стоимости платите частями во время стройки, без процентов и переплаты.</div></div></div>
         <div class="ht"><div class="ht-n">10 лет</div><div class="ht-b"><div class="ht-h">Ипотека TBC Bank</div><div class="ht-t">Доступна иностранцам. По ONE — от 7,8% (8,71% эффективная), без подтверждения дохода.</div></div></div>
@@ -2072,17 +2272,26 @@ a{color:inherit}
       </div>
 
       <div class="how-steps">
-        <h3 class="how-h">Порядок работы со мной</h3>
-        <ol class="hs-list">
-          <li><strong>Разбираем задачу.</strong> Бюджет, цель — доход или ВНЖ, срок, готовы ли ждать стройку.</li>
-          <li><strong>Присылаю подборку.</strong> Конкретные лоты с планировками, ценами и расчётом доходности по каждому.</li>
-          <li><strong>Показываю документы.</strong> Разрешения на строительство, техпаспорта, выписки из реестра, подтверждение финансирования от банка.</li>
-          <li><strong>Бронирование.</strong> Договор резервирования и депозит фиксируют цену и конкретную квартиру.</li>
-          <li><strong>Сделка.</strong> Предварительный договор купли-продажи, оплата по графику, регистрация права.</li>
-          <li><strong>Передача в управление.</strong> Подключаем River Rock — квартира начинает приносить доход.</li>
-        </ol>
+        <h3 class="how-h">С чем мы работаем</h3>
+        <div class="crit">
+          <div class="crit-i">
+            <div class="crit-h">Только объекты с управляющей компанией</div>
+            <div class="crit-t">Инвестиция не должна превращаться в работу. Если некому сдавать
+            и обслуживать квартиру — мы за такой объект не берёмся.</div>
+          </div>
+          <div class="crit-i">
+            <div class="crit-h">Два источника дохода в одном активе</div>
+            <div class="crit-t">Прирост стоимости на этапе стройки плюс арендный поток после сдачи.
+            Объект без одной из этих составляющих в подборку не попадает.</div>
+          </div>
+          <div class="crit-i">
+            <div class="crit-h">Курортные направления</div>
+            <div class="crit-t">Приоритет — Батуми: налог на аренду 5%, ВНЖ от $150&nbsp;000,
+            регистрация за день. По запросу подбираем Болгарию — там свои условия входа.</div>
+          </div>
+        </div>
         <div class="hs-note">
-          Приезжать не обязательно: сделку можно оформить дистанционно по доверенности.
+          Приезжать на сделку не обязательно: всё оформляется дистанционно по доверенности.
           Черновики договоров можно изучить заранее — они есть на русском, английском и немецком.
         </div>
       </div>
@@ -2092,7 +2301,7 @@ a{color:inherit}
 
 <!-- ================= CTA ================= -->
 <div class="page page-last"><section class="sec sec-cta" id="contact">
-  <div class="cta-bg" data-bg="__IMGREF_I24__"></div>
+  <div class="cta-bg" data-bg="__IMGREF_I29__"></div>
   <div class="cta-scrim"></div>
   <div class="wrap cta-wrap">
     <div class="cta-inner">
